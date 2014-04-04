@@ -24,6 +24,10 @@ public class Event extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private EventType type;
 
+    private Location location;
+
+    private Team team;
+
     public Date getBegin() {
         return begin;
     }
@@ -46,5 +50,21 @@ public class Event extends BaseEntity {
 
     public void setType(EventType type) {
         this.type = type;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 }

@@ -1,6 +1,9 @@
 package ch.fhnw.swa.turnier.entity;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Person  extends BaseEntity {
@@ -14,6 +17,9 @@ public class Person  extends BaseEntity {
     private String phone;
 
     private String address;
+
+    @ManyToMany(mappedBy = "coaches")
+    private List<Team> teams = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -45,5 +51,21 @@ public class Person  extends BaseEntity {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<Team> getTeams() {
+        return teams;
+    }
+
+    public void setTeams(List<Team> teams) {
+        this.teams = teams;
+    }
+
+    public void addTeam(Team team) {
+        this.teams.add(team);
+    }
+
+    public void removeTeam(Team team) {
+        this.teams.remove(team);
     }
 }
