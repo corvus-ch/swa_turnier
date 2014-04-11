@@ -7,10 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@NamedQuery(name="Event.findAll", query="SELECT e FROM Event e")
 public class Event extends BaseEntity {
 
     private static final long serialVersionUID = 1L;

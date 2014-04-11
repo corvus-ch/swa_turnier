@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(name="Person.findAll", query="SELECT p FROM Person p")
 public class Person  extends BaseEntity {
 
     private static final long serialVersionUID = 1L;

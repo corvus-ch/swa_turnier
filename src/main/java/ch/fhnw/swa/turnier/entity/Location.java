@@ -1,8 +1,10 @@
 package ch.fhnw.swa.turnier.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(name="Location.findAll", query="SELECT l FROM Location l")
 public class Location extends BaseEntity{
 
     private static final long serialVersionUID = 1L;
