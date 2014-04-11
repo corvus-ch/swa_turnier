@@ -1,4 +1,4 @@
-package ch.fhnw.swa.turnier.entity;
+package ch.fhnw.swa.turnier.domain;
 
 import java.io.Serializable;
 import javax.persistence.GeneratedValue;

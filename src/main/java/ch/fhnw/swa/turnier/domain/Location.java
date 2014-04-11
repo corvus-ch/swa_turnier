@@ -1,4 +1,4 @@
-package ch.fhnw.swa.turnier.entity;
+package ch.fhnw.swa.turnier.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.NamedQuery;

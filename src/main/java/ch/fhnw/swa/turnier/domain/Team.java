@@ -1,4 +1,4 @@
-package ch.fhnw.swa.turnier.entity;
+package ch.fhnw.swa.turnier.domain;
 
 import java.util.ArrayList;
 import java.util.List;
