@@ -1,10 +1,12 @@
 package ch.fhnw.swa.turnier.entity;
 
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -24,8 +26,10 @@ public class Event extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private EventType type;
 
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Location location;
 
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Team team;
 
     public Date getBegin() {
