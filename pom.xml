@@ -28,6 +28,16 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.richfaces.core</groupId>
+            <artifactId>richfaces-core-impl</artifactId>
+            <version>4.3.3.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.richfaces.ui</groupId>
+            <artifactId>richfaces-components-ui</artifactId>
+            <version>4.3.3.Final</version>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -84,5 +94,13 @@
             </plugin>
         </plugins>
     </build>
+    <repositories>
+        <repository>
+            <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+            <id>RichFaces-maven-lib</id>
+            <layout>default</layout>
+            <name>Repository for library RichFaces-maven-lib</name>
+        </repository>
+    </repositories>
 
 </project>
