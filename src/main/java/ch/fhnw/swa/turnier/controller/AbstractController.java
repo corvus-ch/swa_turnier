@@ -79,7 +79,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
         try {
             getBean().create(current);
             JsfUtil.addSuccessMessage("Entity created");
-            return prepareCreate();
+            return "list";
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, e.getLocalizedMessage());
             return null;
