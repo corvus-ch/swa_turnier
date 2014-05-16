@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template/default.xhtml">
+
+        <ui:define name="title">
+            <h:outputText value="Teams"></h:outputText>
+        </ui:define>
+
+        <ui:define name="main">
+            <h:outputText escape="false"
+                          value="No records availlable."
+                          rendered="#{teamController.items.rowCount == 0}"/>
+
+            <h:panelGroup rendered="#{teamController.items.rowCount > 0}">
+
+                <h:dataTable value="#{teamController.items}" var="item" styleClass="table table-hover">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Name"/>
+                        </f:facet>
+                        <h:outputText value="#{item.name}"/>
+                    </h:column>
+                    <h:column>
+                        <h:panelGroup layout="block" styleClass="btn-toolbar">
+                            <h:commandLink action="#{teamController.prepareEdit}" value="Edit" styleClass="btn btn-primary"/>
+                            <h:commandLink action="#{teamController.destroy}" value="Delete" styleClass="btn btn-danger"/>
+                        </h:panelGroup>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+        </ui:define>
+
+        <ui:define name="actions">
+            <h:commandLink action="#{teamController.prepareCreate}" value="Create new team" styleClass="btn btn-default"/>
+        </ui:define>
+    </ui:composition>
+</html>
