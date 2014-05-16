@@ -13,7 +13,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @NamedQuery(name="Event.findAll", query="SELECT e FROM Event e")
-public class Event extends BaseEntity {
+public class Event extends AbstractEntity {
 
     private static final long serialVersionUID = 1L;
 

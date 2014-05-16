@@ -2,7 +2,7 @@ package ch.fhnw.swa.turnier.beans;
 
 import java.util.List;
 
-public interface CrudBean<T> {
+public interface CrudBeanInterface<T> {
 
     public List<T> findAll();
 

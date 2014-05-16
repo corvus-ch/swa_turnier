@@ -8,7 +8,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQuery(name="Team.findAll", query="SELECT t FROM Team t")
-public class Team extends BaseEntity {
+public class Team extends AbstractEntity {
     
     private static final long serialVersionUID = 1L;
 

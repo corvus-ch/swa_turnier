@@ -5,7 +5,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQuery(name="Location.findAll", query="SELECT l FROM Location l")
-public class Location extends BaseEntity{
+public class Location extends AbstractEntity {
 
     private static final long serialVersionUID = 1L;
 

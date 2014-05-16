@@ -8,7 +8,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQuery(name="Person.findAll", query="SELECT p FROM Person p")
-public class Person  extends BaseEntity {
+public class Person  extends AbstractEntity {
 
     private static final long serialVersionUID = 1L;
 

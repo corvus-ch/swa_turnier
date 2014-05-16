@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-abstract public class BaseBean<T> implements CrudBean<T> {
+abstract public class AbstractBean<T> implements CrudBeanInterface<T> {
     
     final Class<T> entityClass;
 
@@ -14,7 +14,7 @@ abstract public class BaseBean<T> implements CrudBean<T> {
     @PersistenceContext
     private EntityManager em;
 
-    public BaseBean(Class<T> entityClass, String findAllQueryName) {
+    public AbstractBean(Class<T> entityClass, String findAllQueryName) {
         this.entityClass = entityClass;
         this.findAllQueryName = findAllQueryName;
     }

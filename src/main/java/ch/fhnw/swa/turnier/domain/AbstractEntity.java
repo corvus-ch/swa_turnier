@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-abstract class BaseEntity implements Serializable {
+abstract public class AbstractEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,7 +34,7 @@ abstract class BaseEntity implements Serializable {
         if (!(object instanceof Event)) {
             return false;
         }
-        BaseEntity other = (BaseEntity) object;
+        AbstractEntity other = (AbstractEntity) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
