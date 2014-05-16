@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template/default.xhtml">
+
+        <ui:define name="title">
+            <h:outputText value="Edit Event"></h:outputText>
+        </ui:define>
+
+        <ui:define name="main">
+            <div class="input-group">
+                <h:outputLabel value="Starts" for="begin" styleClass="input-group-addon"/>
+                <h:inputText value="#{eventController.current.begin}" title="Starts" styleClass="form-control">  
+                    <f:convertDateTime pattern="dd.MM.yyy HH:mm"/>
+                </h:inputText>
+            </div>
+            <br />
+
+            <div class="input-group">
+                <h:outputLabel value="Ends" for="end" styleClass="input-group-addon"/>
+                <h:inputText id="end" value="#{eventController.current.end}" title="Address" styleClass="form-control">
+                    <f:convertDateTime pattern="dd.MM.yyy HH:mm"/>
+                </h:inputText>
+            </div>
+        </ui:define>
+
+        <ui:define name="actions">
+            <h:commandLink action="#{eventController.update}" value="Save" styleClass="btn btn-primary"/>
+            <h:commandLink action="#{eventController.prepareList}" value="Cancel" immediate="true" styleClass="btn btn-danger"/>
+        </ui:define>
+    </ui:composition>
+</html>
