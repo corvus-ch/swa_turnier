@@ -4,9 +4,13 @@ import java.util.List;
 
 public interface CrudBeanInterface<T> {
 
+    public int count();
+
     public List<T> findAll();
 
-    public T findById(Long id);
+    public T find(Long id);
+
+    public List<T> findRange(int first, int last);
 
     public T create(T entity);
 
