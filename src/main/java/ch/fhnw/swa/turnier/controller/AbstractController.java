@@ -1,6 +1,9 @@
 package ch.fhnw.swa.turnier.controller;
 
 import ch.fhnw.swa.turnier.utils.JsfUtil;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
@@ -54,6 +57,8 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
             getBean().create(current);
             JsfUtil.addSuccessMessage("Entity created");
             prepareCreate();
+            recreateModel();
+            recreateOhterModels();
             return "list";
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, "Could not create entity.");
@@ -72,6 +77,8 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
         try {
             getBean().update(current);
             JsfUtil.addSuccessMessage("Entity updated.");
+            recreateModel();
+            recreateOhterModels();
             return "list";
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, "Could not update entity.");
@@ -84,6 +91,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
         current = (T) getItems().getRowData();
         performDestroy();
         recreateModel();
+        recreateOhterModels();
         return "list";
     }
 
@@ -104,7 +112,19 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
         return items;
     }
 
-    private void recreateModel() {
+    public void recreateModel() {
         items = null;
+    }
+
+    private void recreateOhterModels() {
+        List<AbstractController> others = getOthers();
+        for (ListIterator<AbstractController> iter = others.listIterator(); iter.hasNext(); ) {
+            AbstractController other = iter.next();
+            other.recreateModel();
+        }
+    }
+
+    public List<AbstractController> getOthers() {
+        return new ArrayList<>();
     }
 }
