@@ -32,7 +32,6 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
     @Override
     public String prepareList() {
         recreateModel();
-        recreateOhterModels();
         return "list";
     }
 
