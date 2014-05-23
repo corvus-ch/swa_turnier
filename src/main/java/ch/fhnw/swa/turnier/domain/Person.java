@@ -2,6 +2,7 @@ package ch.fhnw.swa.turnier.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
@@ -24,10 +25,10 @@ public class Person  extends AbstractEntity {
 
     private String address;
 
-    @ManyToMany(mappedBy = "coaches")
+    @ManyToMany(mappedBy = "coaches", cascade = CascadeType.ALL)
     private List<Team> coaches = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "players")
+    @ManyToMany(mappedBy = "players", cascade = CascadeType.ALL)
     private List<Team> plays = new ArrayList<>();
 
     public String getName() {
