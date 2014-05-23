@@ -12,6 +12,11 @@
         </ui:define>
 
         <ui:define name="main">
+        <h:messages
+            infoClass="alert alert-success"
+            warnClass="alert alert-warning"
+            errorClass="alert alert-danger" />
+
             <h:outputText escape="false"
                           value="No records availlable."
                           rendered="#{eventController.items.rowCount == 0}"/>

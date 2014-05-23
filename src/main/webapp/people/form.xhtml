@@ -7,11 +7,17 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition>
+        <h:messages
+            infoClass="alert alert-success"
+            warnClass="alert alert-warning"
+            errorClass="alert alert-danger"
+            globalOnly="true" />
 
         <div class="form-group">
             <h:outputLabel value="Name" for="name" styleClass="col-sm-2 control-label"/>
             <div class="col-sm-10">
                 <h:inputText id="name" value="#{personController.current.name}" title="Name" styleClass="form-control"/>
+                <h:message for="name" errorClass="help-block alert alert-danger" />
             </div>
         </div>
 
@@ -19,6 +25,7 @@
             <h:outputLabel value="Mail" for="mail" styleClass="col-sm-2 control-label"/>
             <div class="col-sm-10">
                 <h:inputText id="mail" value="#{personController.current.mail}" title="Mail" styleClass="form-control"/>
+                <h:message for="mail" errorClass="help-block alert alert-danger" />
             </div>
         </div>
 
@@ -33,6 +40,7 @@
             <h:outputLabel value="Address" for="address" styleClass="col-sm-2 control-label"/>
             <div class="col-sm-10">
                 <h:inputText id="address" value="#{personController.current.address}" title="Address" styleClass="form-control"/>
+                <h:message for="address" errorClass="help-block alert alert-danger" />
             </div>
         </div>
 
@@ -44,6 +52,7 @@
                                targetCaption="Coached teams">
                     <f:selectItems value="#{teamController.bean.findAll()}" var="team" itemValue="#{team}" itemLabel="#{team.name}" />
                 </rich:pickList>
+                <h:message for="coaches" errorClass="help-block alert alert-danger" />
             </div>
         </div>
 
@@ -56,6 +65,7 @@
                                targetCaption="Plays in">
                     <f:selectItems value="#{teamController.bean.findAll()}" var="team" itemValue="#{team}" itemLabel="#{team.name}" />
                 </rich:pickList>
+                <h:message for="plays" errorClass="help-block alert alert-danger" />
             </div>
         </div>
 
