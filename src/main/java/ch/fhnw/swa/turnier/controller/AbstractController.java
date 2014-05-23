@@ -1,7 +1,6 @@
 package ch.fhnw.swa.turnier.controller;
 
 import ch.fhnw.swa.turnier.utils.JsfUtil;
-import ch.fhnw.swa.turnier.utils.PaginationHelper;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 

@@ -53,7 +53,7 @@
             <div class="col-sm-10">
                 <rich:pickList id="plays" value="#{personController.current.teams}"
                                sourceCaption="Teams"
-                               targetCaption="Coached teams">
+                               targetCaption="Plays in">
                     <f:selectItems value="#{teamController.bean.findAll()}" var="team" itemValue="#{team}" itemLabel="#{team.name}" />
                 </rich:pickList>
             </div>
