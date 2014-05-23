@@ -11,16 +11,7 @@
         </ui:define>
 
         <ui:define name="main">
-            <div class="input-group">
-                <h:outputLabel value="Name" for="name" styleClass="input-group-addon"/>
-                <h:inputText id="name" value="#{locationController.current.name}" title="Name" styleClass="form-control"/>
-            </div>
-            <br />
-
-            <div class="input-group">
-                <h:outputLabel value="Address" for="address" styleClass="input-group-addon"/>
-                <h:inputText id="address" value="#{locationController.current.address}" title="Address" styleClass="form-control"/>
-            </div>
+            <ui:include src="form.xhtml" />
         </ui:define>
 
         <ui:define name="actions">
