@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @NamedQuery(name="Event.findAll", query="SELECT e FROM Event e")
@@ -19,13 +21,18 @@ public class Event extends AbstractEntity {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "start_time")
+    @NotNull
+    @Future
     private Date begin;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "end_time")
+    @NotNull
+    @Future
     private Date end;
 
     @Enumerated(EnumType.STRING)
+    @NotNull
     private EventType type;
 
     @ManyToOne(cascade = CascadeType.PERSIST)

@@ -7,6 +7,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @NamedQuery(name="Team.findAll", query="SELECT t FROM Team t")
@@ -14,6 +16,8 @@ public class Team extends AbstractEntity {
     
     private static final long serialVersionUID = 1L;
 
+    @NotNull
+    @Size(min = 2, message = "Must be at least two characters.")
     private String name;
 
     @ManyToMany
