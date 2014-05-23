@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition>
+        <div class="form-group">
+            <h:outputLabel value="Name" for="name" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <h:inputText id="name" value="#{teamController.current.name}" title="Name" styleClass="form-control"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel value="Coached by" for="coaches" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <rich:pickList id="coaches" value="#{teamController.current.coaches}"
+                               sourceCaption="People"
+                               targetCaption="Coaches">
+                    <f:selectItems value="#{personController.bean.findAll()}" var="person" itemValue="#{person}" itemLabel="#{person.name}" />
+                </rich:pickList>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel value="Players" for="players" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <rich:pickList id="players" value="#{teamController.current.players}"
+                               sourceCaption="People"
+                               targetCaption="Players">
+                    <f:selectItems value="#{personController.bean.findAll()}" var="person" itemValue="#{person}" itemLabel="#{person.name}" />
+                </rich:pickList>
+            </div>
+        </div>
+    </ui:composition>
+</html>

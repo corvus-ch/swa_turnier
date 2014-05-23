@@ -21,7 +21,10 @@ public class Person  extends AbstractEntity {
     private String address;
 
     @ManyToMany(mappedBy = "coaches")
-    private List<Team> teams = new ArrayList<>();
+    private List<Team> coaches = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "players")
+    private List<Team> plays = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -55,19 +58,35 @@ public class Person  extends AbstractEntity {
         this.address = address;
     }
 
+    public List<Team> getCoachedTeams() {
+        return coaches;
+    }
+
+    public void setCoachedTeams(List<Team> teams) {
+        this.coaches = teams;
+    }
+
+    public void addCoachedTeam(Team team) {
+        this.coaches.add(team);
+    }
+
+    public void removeCoachedTeam(Team team) {
+        this.coaches.remove(team);
+    }
+
     public List<Team> getTeams() {
-        return teams;
+        return plays;
     }
 
     public void setTeams(List<Team> teams) {
-        this.teams = teams;
+        this.plays = teams;
     }
 
     public void addTeam(Team team) {
-        this.teams.add(team);
+        this.plays.add(team);
     }
 
     public void removeTeam(Team team) {
-        this.teams.remove(team);
+        this.plays.remove(team);
     }
 }

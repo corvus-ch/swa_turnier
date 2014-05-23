@@ -11,28 +11,7 @@
         </ui:define>
 
         <ui:define name="main">
-            <div class="input-group">
-                <h:outputLabel value="Name" for="name" styleClass="input-group-addon"/>
-                <h:inputText id="name" value="#{personController.current.name}" title="Name" styleClass="form-control"/>
-            </div>
-            <br />
-            
-            <div class="input-group">
-                <h:outputLabel value="Mail" for="mail" styleClass="input-group-addon"/>
-                <h:inputText id="mail" value="#{personController.current.mail}" title="Mail" styleClass="form-control"/>
-            </div>
-            <br />
-
-            <div class="input-group">
-                <h:outputLabel value="Phone" for="phone" styleClass="input-group-addon"/>
-                <h:inputText id="phone" value="#{personController.current.phone}" title="Phone" styleClass="form-control"/>
-            </div>
-            <br />
-
-            <div class="input-group">
-                <h:outputLabel value="Address" for="address" styleClass="input-group-addon"/>
-                <h:inputText id="address" value="#{personController.current.address}" title="Address" styleClass="form-control"/>
-            </div>
+            <ui:include src="form.xhtml" />
         </ui:define>
 
         <ui:define name="actions">
