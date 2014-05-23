@@ -24,7 +24,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
                 current = entityClass.newInstance();
                 selectedItemIndex = -1;
             } catch ( InstantiationException | IllegalAccessException e) {
-                JsfUtil.addErrorMessage(e, e.getLocalizedMessage());
+                JsfUtil.addErrorMessage(e, "Could not set current entity.");
             }
         }
         return current;
@@ -68,7 +68,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
             selectedItemIndex = -1;
             next = "create";
         } catch (InstantiationException | IllegalAccessException e) {
-            JsfUtil.addErrorMessage(e, e.getLocalizedMessage());
+            JsfUtil.addErrorMessage(e, "Failed to prepare for create.");
             next = "list";
         }
         return next;
@@ -81,7 +81,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
             JsfUtil.addSuccessMessage("Entity created");
             return "list";
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, e.getLocalizedMessage());
+            JsfUtil.addErrorMessage(e, "Could not create entity.");
             return null;
         }
     }
@@ -100,7 +100,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
             JsfUtil.addSuccessMessage("Entity updated.");
             return "list";
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, e.getLocalizedMessage());
+            JsfUtil.addErrorMessage(e, "Could not update entity.");
             return null;
         }
     }
