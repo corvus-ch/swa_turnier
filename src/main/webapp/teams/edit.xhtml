@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="/template/default.xhtml">
 
@@ -14,6 +16,18 @@
             <div class="input-group">
                 <h:outputLabel value="Name" for="name" styleClass="input-group-addon"/>
                 <h:inputText id="name" value="#{teamController.current.name}" title="Name" styleClass="form-control"/>
+            </div>
+            <br />
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Coached by</div>
+                <div class="panel-body">
+                    <rich:pickList value="#{teamController.current.coaches}"
+                                   sourceCaption="People"
+                                   targetCaption="Coaches">
+                        <f:selectItems value="#{personController.bean.findAll()}" var="person" itemValue="#{person}" itemLabel="#{person.name}" />
+                    </rich:pickList>
+                </div>
             </div>
         </ui:define>
 
