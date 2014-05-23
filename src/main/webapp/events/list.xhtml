@@ -21,16 +21,37 @@
                 <h:dataTable value="#{eventController.items}" var="item" styleClass="table table-hover">
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Starts"/>
+                            <h:outputText value="Time"/>
                         </f:facet>
-                        <h:outputText value="#{item.begin}"/>
+                        <h:outputText value="#{item.begin}">
+                            <f:convertDateTime pattern="dd.MM.yyy HH:mm"/>
+                        </h:outputText>
+                        <br />
+                        <h:outputText value="#{item.end}">
+                            <f:convertDateTime pattern="dd.MM.yyy HH:mm"/>
+                        </h:outputText>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Type"/>
+                        </f:facet>
+                        <h:outputText value="#{item.type}"/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Location"/>
+                        </f:facet>
+                        <h:outputText value="#{item.location.name}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Ends"/>
+                            <h:outputText value="Team"/>
                         </f:facet>
-                        <h:outputText value="#{item.end}"/>
+                        <h:outputText value="#{item.team.name}"/>
                     </h:column>
+
                     <h:column>
                         <h:panelGroup layout="block" styleClass="btn-toolbar">
                             <h:commandLink action="#{eventController.prepareEdit}" value="Edit" styleClass="btn btn-primary"/>
