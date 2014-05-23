@@ -1,7 +1,6 @@
 package ch.fhnw.swa.turnier.controller;
 
 import ch.fhnw.swa.turnier.beans.CrudBeanInterface;
-import ch.fhnw.swa.turnier.utils.PaginationHelper;
 import java.io.Serializable;
 import javax.faces.model.DataModel;
 
@@ -15,8 +14,6 @@ public interface ControllerInterface<T> extends Serializable {
 
     public CrudBeanInterface getBean();
 
-    public PaginationHelper getPagination();
-
     public String prepareList();
 
     public String prepareCreate();
@@ -28,8 +25,4 @@ public interface ControllerInterface<T> extends Serializable {
     public String update();
 
     public String destroy();
-
-    public String next();
-
-    public String previous();
 }

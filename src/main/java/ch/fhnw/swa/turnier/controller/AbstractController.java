@@ -13,16 +13,11 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
 
     protected Class<T> entityClass;
 
-    private PaginationHelper pagination;
-
-    private int selectedItemIndex;
-
     @Override
     public T getCurrent() {
         if (current == null) {
             try {
                 current = entityClass.newInstance();
-                selectedItemIndex = -1;
             } catch ( InstantiationException | IllegalAccessException e) {
                 JsfUtil.addErrorMessage(e, "Could not set current entity.");
             }
@@ -36,27 +31,9 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
     }
 
     @Override
-    public PaginationHelper getPagination() {
-        if (pagination == null) {
-            pagination = new PaginationHelper(10) {
-
-                @Override
-                public int getItemsCount() {
-                    return getBean().count();
-                }
-
-                @Override
-                public DataModel createPageDataModel() {
-                    return new ListDataModel(getBean().findRange(getPageFirstItem(), getPageFirstItem() + getPageSize()));
-                }
-            };
-        }
-        return pagination;
-    }
-
-    @Override
     public String prepareList() {
         recreateModel();
+        recreateOhterModels();
         return "list";
     }
 
@@ -65,7 +42,6 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
         String next;
         try {
             current = entityClass.newInstance();
-            selectedItemIndex = -1;
             next = "create";
         } catch (InstantiationException | IllegalAccessException e) {
             JsfUtil.addErrorMessage(e, "Failed to prepare for create.");
@@ -90,7 +66,6 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
     @Override
     public String prepareEdit() {
         current = (T) getItems().getRowData();
-        selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "edit";
     }
 
@@ -109,9 +84,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
     @Override
     public String destroy() {
         current = (T) getItems().getRowData();
-        selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         performDestroy();
-        recreatePagination();
         recreateModel();
         return "list";
     }
@@ -125,48 +98,15 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
         }
     }
 
-    private void updateCurrentItem() {
-        int count = getBean().count();
-        if (selectedItemIndex >= count) {
-            // selected index cannot be bigger than number of items:
-            selectedItemIndex = count - 1;
-            // go to previous page if last page disappeared:
-            if (pagination.getPageFirstItem() >= count) {
-                pagination.previousPage();
-            }
-        }
-        if (selectedItemIndex >= 0) {
-            current = (T) getBean().findRange(selectedItemIndex, selectedItemIndex + 1).get(0);
-        }
-    }
-
     @Override
     public DataModel getItems() {
         if (items == null) {
-            items = getPagination().createPageDataModel();
+            items = new ListDataModel(getBean().findAll());
         }
         return items;
     }
 
     private void recreateModel() {
         items = null;
-    }
-
-    private void recreatePagination() {
-        pagination = null;
-    }
-
-    @Override
-    public String next() {
-        getPagination().nextPage();
-        recreateModel();
-        return "list";
-    }
-
-    @Override
-    public String previous() {
-        getPagination().previousPage();
-        recreateModel();
-        return "list";
     }
 }
