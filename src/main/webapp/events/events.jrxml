@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version last-->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="events" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<field name="Name" class="java.lang.String"/>
-	<detail>
-		<band height="125" splitType="Stretch">
-			<textField>
-				<reportElement x="101" y="1" width="100" height="20"/>
-				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="1" y="1" width="100" height="20"/>
-				<text><![CDATA[Name]]></text>
-			</staticText>
-		</band>
-	</detail>
+<jasperReport
+    xmlns="http://jasperreports.sourceforge.net/jasperreports"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+    http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" 
+    name="Events">
+
+    <field name="begin" class="java.lang.String"/>
+    <field name="end" class="java.lang.String" />
+    <field name="type" class="java.lang.String" />
+    <field name="location" class="java.lang.String"/>
+    <field name="team" class="java.lang.String"/>
+
+    <detail>
+        <band height="50">
+            <textField>
+                <reportElement x="0" y="0" width="100" height="20" />
+                <textFieldExpression><![CDATA[$F{begin}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="100" y="0" width="100" height="20" />
+                <textFieldExpression><![CDATA[$F{end}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="200" y="0" width="100" height="20" />
+                <textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="60" y="25" width="100" height="20" />
+                <textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="240" y="25" width="100" height="20" />
+                <textFieldExpression><![CDATA[$F{team}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
 </jasperReport>

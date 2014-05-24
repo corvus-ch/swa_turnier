@@ -9,13 +9,15 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.EnumSet;
 import java.util.HashMap;
+import java.util.Iterator;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRField;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -50,7 +52,49 @@ public class EventController extends AbstractController<Event> {
             String template = ec.getRealPath("/events/events.jrxml");
 
             JasperReport jasperReport = JasperCompileManager.compileReport(template);
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap(), new JREmptyDataSource());
+
+            final Iterator<Event> iterator = bean.findAll().iterator();
+
+            JRDataSource data = new JRDataSource() {
+
+                private Event current;
+
+                @Override
+                public boolean next() throws JRException {
+                    boolean hasNext = iterator.hasNext();
+                    if (hasNext) {
+                        current = iterator.next();
+                    }
+                    return hasNext;
+                }
+
+                @Override
+                public Object getFieldValue(JRField jrf) throws JRException {
+                    Object value = null;
+                    switch(jrf.getName()) {
+                        case "begin":
+                            value = current.getBegin().toString();
+                            break;
+                        case "end":
+                            value = current.getBegin().toString();
+                            break;
+                        case "type":
+                            value = current.getType().toString();
+                            break;
+                        case "location":
+                            value = current.getLocation().getName();
+                            break;
+                        case "team":
+                            value = current.getTeam().getName();
+                            break;
+                        default:
+                            throw new JRException("Unknown field: " + jrf.getName());
+                    }
+                    return value;
+                }
+            };
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap(), data);
 
             byte[] pdf = JasperExportManager.exportReportToPdf(jasperPrint);
 
