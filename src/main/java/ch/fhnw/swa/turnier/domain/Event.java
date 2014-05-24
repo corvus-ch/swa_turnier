@@ -35,10 +35,16 @@ public class Event extends AbstractEntity {
     @NotNull
     private EventType type;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE,
+    })
     private Location location;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE,
+    })
     private Team team;
 
     public Date getBegin() {

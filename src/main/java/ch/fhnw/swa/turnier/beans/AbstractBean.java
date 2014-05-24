@@ -31,6 +31,7 @@ abstract public class AbstractBean<T> implements CrudBeanInterface<T> {
 
     @Override
     public T create(T entity) {
+        mergeRelated(entity);
         getEm().persist(entity);
         return entity;
     }
@@ -61,6 +62,27 @@ abstract public class AbstractBean<T> implements CrudBeanInterface<T> {
         criterieQuery.select(getEm().getCriteriaBuilder().count(rt));
         Query query = getEm().createQuery(criterieQuery);
         return ((Long) query.getSingleResult()).intValue();
+    }
+
+    /**
+     * Merges the related entities.
+     * 
+     * 
+     * For having CascadeType.MERGE set on the relationship annotations, does
+     * not work when trying to persist a new entitie with detached entities
+     * assigned.
+     *
+     * Implementations of this class can override this method to manually merge
+     * related enties. The method will be called before a new entity gets
+     * persisted.
+     *
+     * @param entity
+     *   The entiy the related entites should be merged.
+     *
+     * @see AbstractBean::create()
+     */
+    protected void mergeRelated(T entity) {
+        // Intentionaly left blank.
     }
 
     protected abstract EntityManager getEm();    
