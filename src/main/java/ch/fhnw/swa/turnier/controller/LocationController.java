@@ -12,7 +12,7 @@ import javax.inject.Named;
 public class LocationController extends AbstractController<Location>{
 
     @EJB
-    private LocationBean bean;
+    transient private LocationBean bean;
 
     public LocationController() {
         entityClass = Location.class;

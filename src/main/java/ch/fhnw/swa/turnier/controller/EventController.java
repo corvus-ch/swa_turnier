@@ -14,7 +14,7 @@ import javax.inject.Named;
 public class EventController extends AbstractController<Event> {
 
     @EJB
-    private EventBean bean;
+    transient private EventBean bean;
 
     public EventController() {
         entityClass = Event.class;

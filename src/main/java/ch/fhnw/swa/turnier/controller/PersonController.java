@@ -14,10 +14,10 @@ import javax.inject.Named;
 public class PersonController extends AbstractController<Person>{
 
     @EJB
-    private PersonBean bean;
+    transient private PersonBean bean;
 
     @Inject
-    private TeamController teamController;
+    transient private TeamController teamController;
 
     private List<AbstractController> others;
 

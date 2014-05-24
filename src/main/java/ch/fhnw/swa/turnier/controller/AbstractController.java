@@ -11,7 +11,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
 
     private T current;
 
-    private DataModel items = null;
+    transient private DataModel items = null;
 
     protected Class<T> entityClass;
 
