@@ -7,16 +7,28 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+/**
+ * CRUD bean for evetns.
+ */
 @Stateless
 public class EventBean extends AbstractBean<Event> {
 
+    /**
+     * The entity manger.
+     */
     @PersistenceContext
     private EntityManager em;
 
+    /**
+     * Constructor.
+     */
     public EventBean() {
         super(Event.class, "Event.findAll");
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected EntityManager getEm() {
         return em;

@@ -7,17 +7,29 @@ import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
+/**
+ * Controller for teams.
+ */
 @Named
 @SessionScoped
 public class TeamController extends AbstractController<Team> {
 
+    /**
+     * The CRUD bean for teams.
+     */
     @EJB
     private TeamBean bean;
 
+    /**
+     * Construcotr.
+     */
     public TeamController() {
         entityClass = Team.class;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CrudBeanInterface getBean() {
         return bean;

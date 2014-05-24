@@ -23,15 +23,33 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 
+/**
+ * The controller for events.
+ */
 @Named
 @SessionScoped
 public class EventController extends AbstractController<Event> {
 
+    /**
+     * The CRUD bean for events.
+     */
     @EJB
     private EventBean bean;
 
+    /**
+     * The report.
+     *
+     * Jasper rports object containing the compiled report template ready to be
+     * used for creating rports.
+     */
     private final JasperReport report;
 
+    /**
+     * Constructor.
+     *
+     * @throws JRException
+     *   When failing to compile the report template.
+     */
     public EventController() throws JRException {
         entityClass = Event.class;
 
@@ -41,21 +59,47 @@ public class EventController extends AbstractController<Event> {
         report = JasperCompileManager.compileReport(template);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CrudBeanInterface getBean() {
         return bean;
     }
 
+    /**
+     * List of event types.
+     *
+     * @return
+     *   The list of all awaillable event types.
+     */
     public EnumSet<EventType> getTypes() {
         return EnumSet.of(EventType.GAME, EventType.TRAINING);
     }
 
+    /**
+     * Gets the events PDF.
+     * 
+     * Gets a PDF containing a list of events.
+     *
+     * @return
+     *   The PDF as byte array.
+     *
+     * @throws JRException
+     *   When failing to create the report.
+     */
     private byte[] getPdf() throws JRException {
         JRDataSource data = new EventJRDataSource(getItems().iterator());
         JasperPrint jasperPrint = JasperFillManager.fillReport(report, new HashMap(), data);
         return JasperExportManager.exportReportToPdf(jasperPrint);
     }
 
+    /**
+     * Offers the evetns pdf for download.
+     *
+     * @throws IOException
+     *   When failing to write the PDF to the output stream.
+     */
     public void download() throws IOException {
         FacesContext fc = FacesContext.getCurrentInstance();
         ExternalContext ec = fc.getExternalContext();
