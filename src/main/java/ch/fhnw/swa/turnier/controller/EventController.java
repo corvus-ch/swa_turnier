@@ -4,12 +4,12 @@ import ch.fhnw.swa.turnier.beans.CrudBeanInterface;
 import ch.fhnw.swa.turnier.beans.EventBean;
 import ch.fhnw.swa.turnier.domain.Event;
 import ch.fhnw.swa.turnier.domain.EventType;
+import ch.fhnw.swa.turnier.utils.EventJRDataSource;
 import ch.fhnw.swa.turnier.utils.JsfUtil;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.EnumSet;
 import java.util.HashMap;
-import java.util.Iterator;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.ExternalContext;
@@ -17,7 +17,6 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JRField;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -31,8 +30,15 @@ public class EventController extends AbstractController<Event> {
     @EJB
     private EventBean bean;
 
-    public EventController() {
+    private final JasperReport report;
+
+    public EventController() throws JRException {
         entityClass = Event.class;
+
+        FacesContext fc = FacesContext.getCurrentInstance();
+        ExternalContext ec = fc.getExternalContext();
+        String template = ec.getRealPath("/events/events.jrxml");
+        report = JasperCompileManager.compileReport(template);
     }
 
     @Override
@@ -44,59 +50,18 @@ public class EventController extends AbstractController<Event> {
         return EnumSet.of(EventType.GAME, EventType.TRAINING);
     }
 
+    private byte[] getPdf() throws JRException {
+        JRDataSource data = new EventJRDataSource(getItems().iterator());
+        JasperPrint jasperPrint = JasperFillManager.fillReport(report, new HashMap(), data);
+        return JasperExportManager.exportReportToPdf(jasperPrint);
+    }
+
     public void download() throws IOException {
         FacesContext fc = FacesContext.getCurrentInstance();
         ExternalContext ec = fc.getExternalContext();
 
         try {
-            String template = ec.getRealPath("/events/events.jrxml");
-
-            JasperReport jasperReport = JasperCompileManager.compileReport(template);
-
-            final Iterator<Event> iterator = bean.findAll().iterator();
-
-            JRDataSource data = new JRDataSource() {
-
-                private Event current;
-
-                @Override
-                public boolean next() throws JRException {
-                    boolean hasNext = iterator.hasNext();
-                    if (hasNext) {
-                        current = iterator.next();
-                    }
-                    return hasNext;
-                }
-
-                @Override
-                public Object getFieldValue(JRField jrf) throws JRException {
-                    Object value = null;
-                    switch(jrf.getName()) {
-                        case "begin":
-                            value = current.getBegin().toString();
-                            break;
-                        case "end":
-                            value = current.getBegin().toString();
-                            break;
-                        case "type":
-                            value = current.getType().toString();
-                            break;
-                        case "location":
-                            value = current.getLocation().getName();
-                            break;
-                        case "team":
-                            value = current.getTeam().getName();
-                            break;
-                        default:
-                            throw new JRException("Unknown field: " + jrf.getName());
-                    }
-                    return value;
-                }
-            };
-
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap(), data);
-
-            byte[] pdf = JasperExportManager.exportReportToPdf(jasperPrint);
+            byte[] pdf = getPdf();
 
             ec.responseReset();
             ec.setResponseContentType("application/pdf");
