@@ -33,18 +33,22 @@ abstract public class AbstractBean<T> implements CrudBeanInterface<T> {
     public T create(T entity) {
         mergeRelated(entity);
         getEm().persist(entity);
+        getEm().flush();
         return entity;
     }
 
     @Override
     public T update(T entity) {
-        return getEm().merge(entity);
+        entity = getEm().merge(entity);
+        getEm().flush();
+        return entity;
     }
 
     @Override
     public void delete(T entity) {
         entity = getEm().merge(entity);
         getEm().remove(entity);
+        getEm().flush();
     }
 
     @Override
