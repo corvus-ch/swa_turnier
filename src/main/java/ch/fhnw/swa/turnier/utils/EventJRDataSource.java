@@ -28,24 +28,31 @@ public class EventJRDataSource implements JRDataSource {
     @Override
     public Object getFieldValue(JRField jrf) throws JRException {
         Object value = null;
-        switch (jrf.getName()) {
-            case "begin":
-                value = current.getBegin().toString();
-                break;
-            case "end":
-                value = current.getBegin().toString();
-                break;
-            case "type":
-                value = current.getType().toString();
-                break;
-            case "location":
-                value = current.getLocation().getName();
-                break;
-            case "team":
-                value = current.getTeam().getName();
-                break;
-            default:
-                throw new JRException("Unknown field: " + jrf.getName());
+        try {
+            switch (jrf.getName()) {
+                case "begin":
+                    value = current.getBegin();
+                    break;
+                case "end":
+                    value = current.getBegin();
+                    break;
+                case "type":
+                    value = current.getType();
+                    break;
+                case "location":
+                    value = current.getLocation();
+                    break;
+                case "team":
+                    value = current.getTeam();
+                    break;
+                case "coach":
+                    value = current.getTeam().getCoaches().get(0);
+                    break;
+                default:
+                    throw new JRException("Unknown field: " + jrf.getName());
+            }
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+            // Intentionally left blank.
         }
         return value;
     }
