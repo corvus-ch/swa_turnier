@@ -46,7 +46,7 @@
             <h:outputLabel value="Location" for="location" styleClass="col-sm-2 control-label"/>
             <div class="col-sm-10">
                 <h:selectOneMenu id="location" value="#{eventController.current.location}" styleClass="form-control">
-                    <f:selectItems value="#{locationController.bean.findAll()}" var="location" itemLabel="#{location.name}" itemValue="#{location}" />
+                    <f:selectItems value="#{locationController.items}" var="location" itemLabel="#{location.name}" itemValue="#{location}" />
                 </h:selectOneMenu>
                 <h:message for="location" errorClass="help-block alert alert-danger" />
             </div>
@@ -56,7 +56,7 @@
             <h:outputLabel value="Team" for="team" styleClass="col-sm-2 control-label"/>
             <div class="col-sm-10">
                 <h:selectOneMenu id="team" value="#{eventController.current.team}" styleClass="form-control" >
-                    <f:selectItems value="#{teamController.bean.findAll()}" var="team" itemLabel="#{team.name}" itemValue="#{team}" />
+                    <f:selectItems value="#{teamController.items}" var="team" itemLabel="#{team.name}" itemValue="#{team}" />
                 </h:selectOneMenu>
                 <h:message for="team" errorClass="help-block alert alert-danger" />
             </div>

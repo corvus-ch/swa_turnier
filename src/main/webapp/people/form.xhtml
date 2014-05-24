@@ -50,7 +50,7 @@
                 <rich:pickList id="coaches" value="#{personController.current.coachedTeams}"
                                sourceCaption="Teams"
                                targetCaption="Coached teams">
-                    <f:selectItems value="#{teamController.bean.findAll()}" var="team" itemValue="#{team}" itemLabel="#{team.name}" />
+                    <f:selectItems value="#{teamController.items}" var="team" itemValue="#{team}" itemLabel="#{team.name}" />
                 </rich:pickList>
                 <h:message for="coaches" errorClass="help-block alert alert-danger" />
             </div>
@@ -63,7 +63,7 @@
                 <rich:pickList id="plays" value="#{personController.current.teams}"
                                sourceCaption="Teams"
                                targetCaption="Plays in">
-                    <f:selectItems value="#{teamController.bean.findAll()}" var="team" itemValue="#{team}" itemLabel="#{team.name}" />
+                    <f:selectItems value="#{teamController.items}" var="team" itemValue="#{team}" itemLabel="#{team.name}" />
                 </rich:pickList>
                 <h:message for="plays" errorClass="help-block alert alert-danger" />
             </div>
