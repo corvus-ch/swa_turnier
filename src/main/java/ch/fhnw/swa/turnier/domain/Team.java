@@ -2,6 +2,7 @@ package ch.fhnw.swa.turnier.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -31,7 +32,7 @@ public class Team extends AbstractEntity {
     /**
      * The list of coaches.
      */
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "coaches",
             joinColumns = @JoinColumn(name = "team_id"),
@@ -42,7 +43,7 @@ public class Team extends AbstractEntity {
     /**
      * The list of players.
      */
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "players",
             joinColumns = @JoinColumn(name = "team_id"),

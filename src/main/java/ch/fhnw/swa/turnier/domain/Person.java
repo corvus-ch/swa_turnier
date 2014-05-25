@@ -1,7 +1,10 @@
 package ch.fhnw.swa.turnier.domain;
 
-import java.util.ArrayList;
+import ch.fhnw.swa.turnier.utils.CoachedTeamsList;
+import ch.fhnw.swa.turnier.utils.EntityList;
+import ch.fhnw.swa.turnier.utils.PlayingTeamsList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
@@ -13,6 +16,9 @@ import javax.validation.constraints.Size;
  *
  * A person has a name and can have several means for contacting the person set.
  * A perason can be assigned to a team eighter as coach and or palyer.
+ *
+ * The entity uses implementations of {@code EntityList} to propagate changes to
+ * manay to many relationships to the owning side.
  */
 @Entity
 @NamedQuery(name="Person.findAll", query="SELECT p FROM Person p")
@@ -45,14 +51,14 @@ public class Person  extends AbstractEntity {
     /**
      * List of teams coached by this person.
      */
-    @ManyToMany(mappedBy = "coaches")
-    private List<Team> coaches = new ArrayList<>();
+    @ManyToMany(mappedBy = "coaches", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<Team> coaches = new CoachedTeamsList(this);
 
     /**
      * List of teams this person plays with.
      */
-    @ManyToMany(mappedBy = "players")
-    private List<Team> plays = new ArrayList<>();
+    @ManyToMany(mappedBy = "players", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<Team> plays = new PlayingTeamsList(this);
 
     /**
      * Gets the name.
@@ -141,6 +147,10 @@ public class Person  extends AbstractEntity {
      *   List of teams coached by this person.
      */
     public List<Team> getCoachedTeams() {
+        // Ensure propagation to owning side does work.
+        if (!(coaches instanceof EntityList)) {
+            coaches = new CoachedTeamsList(this, coaches);
+        }
         return coaches;
     }
 
@@ -161,6 +171,10 @@ public class Person  extends AbstractEntity {
      *   Teh list of teams this person plays with.
      */
     public List<Team> getTeams() {
+        // Ensure propagation to owning side does work.
+        if (!(plays instanceof EntityList)) {
+            plays = new CoachedTeamsList(this, plays);
+        }
         return plays;
     }
 
