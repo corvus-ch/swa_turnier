@@ -13,6 +13,9 @@ import javax.faces.model.ListDataModel;
  * handled in an abstract manner leaving all the entity specific
  * stuff to the entity specific implementations.
  *
+ * In order to alter the create, update and destroy behaviour, one can overwrite
+ * the corresponding doX() methods.
+ *
  * @param <T> 
  *   The entity the controller supports.
  */
@@ -90,7 +93,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
     @Override
     public String create() {
         try {
-            getBean().create(current);
+            doCreate();
             JsfUtil.addSuccessMessage("Entity created");
             prepareCreate();
             return "list";
@@ -98,6 +101,13 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
             JsfUtil.addErrorMessage(e, "Could not create entity.");
             return null;
         }
+    }
+
+    /**
+     * Does the actuall create operations.
+     */
+    protected void doCreate() {
+        getBean().create(current);
     }
 
     /**
@@ -115,7 +125,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
     @Override
     public String update() {
         try {
-            getBean().update(current);
+            doUpdate();
             JsfUtil.addSuccessMessage("Entity updated.");
             return "list";
         } catch (Exception e) {
@@ -125,19 +135,33 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
     }
 
     /**
+     * Does the actuall update operations.
+     */
+    protected void doUpdate() {
+        getBean().update(current);
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override
     public String destroy() {
         current = (T) getItems().getRowData();
         try {
-            getBean().delete(current);
+            doDestroy();
             JsfUtil.addSuccessMessage("Entity deleted.");
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, "Failed to delete!");
         }
         recreateModel();
         return "list";
+    }
+
+    /**
+     * Does the actuall destroy operations.
+     */
+    protected void doDestroy() {
+        getBean().delete(current);
     }
 
     /**
@@ -158,7 +182,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
      *
      * @see AbstractController::getItems()
      */
-    private void recreateModel() {
+    protected void recreateModel() {
         items = null;
     }
 }
