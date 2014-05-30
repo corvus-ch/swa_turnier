@@ -3,6 +3,8 @@ package ch.fhnw.swa.turnier.domain;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
 import javax.validation.constraints.NotNull;
@@ -45,13 +47,23 @@ public class Person  extends AbstractEntity {
     /**
      * List of teams coached by this person.
      */
-    @ManyToMany(mappedBy = "coaches")
+    @ManyToMany
+    @JoinTable(
+            name = "coaches",
+            joinColumns = @JoinColumn(name = "person_id"),
+            inverseJoinColumns = @JoinColumn(name = "team_id")
+    )
     private List<Team> coaches = new ArrayList<>();
 
     /**
      * List of teams this person plays with.
      */
-    @ManyToMany(mappedBy = "players")
+    @ManyToMany
+    @JoinTable(
+            name = "players",
+            joinColumns = @JoinColumn(name = "person_id"),
+            inverseJoinColumns = @JoinColumn(name = "team_id")
+    )
     private List<Team> plays = new ArrayList<>();
 
     /**
