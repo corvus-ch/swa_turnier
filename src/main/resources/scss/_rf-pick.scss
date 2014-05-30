@@ -1,0 +1,44 @@
+// Styles the RichFases pick list in bootstrap style.
+
+.rf-pick {
+    td {
+        vertical-align: top;
+        padding: 0.2em;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.rf-pick-btn {
+    @extend .btn;
+    @extend .btn-default;
+}
+
+.rf-pick-src-cptn,
+.rf-pick-tgt-cptn {
+    @extend .well;
+    @extend .well-sm;
+}
+
+// Remove the border added by RichFaces.
+// RichFases uses *.rf-pick-lst-dcrtn as a selector and is imported after the
+// default styles. Using a stronger selector makes sure this rule gets picked
+// up.
+div.rf-pick-lst-dcrtn {
+    border-width: 0;
+}
+
+.rf-pick-lst-scrl {
+    @extend .list-group;
+
+    .rf-pick-opt {
+        @extend .list-group-item;
+    }
+
+    .rf-pick-sel {
+        @extend .active;
+    }
+}
+
