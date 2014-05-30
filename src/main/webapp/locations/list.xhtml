@@ -32,8 +32,8 @@
                     </h:column>
                     <h:column>
                         <h:panelGroup layout="block" styleClass="btn-toolbar">
-                            <h:commandLink action="#{locationController.prepareEdit}" value="Edit" styleClass="btn btn-primary"/>
-                            <h:commandLink action="#{locationController.destroy}" value="Delete" styleClass="btn btn-danger"/>
+                            <h:commandLink action="#{locationController.prepareEdit}" value="Edit" styleClass="edit"/>
+                            <h:commandLink action="#{locationController.destroy}" value="Delete" styleClass="delete"/>
                         </h:panelGroup>
                     </h:column>
                 </h:dataTable>
@@ -41,7 +41,7 @@
         </ui:define>
 
         <ui:define name="actions">
-            <h:commandLink action="#{locationController.prepareCreate}" value="Create new location" styleClass="btn btn-default"/>
+            <h:commandLink action="#{locationController.prepareCreate}" value="Create new location" styleClass="create"/>
         </ui:define>
     </ui:composition>
 </html>

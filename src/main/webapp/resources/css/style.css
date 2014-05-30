@@ -344,9 +344,15 @@ th {
     background-color: #fff !important;
   }
 
-  .btn > .caret, .rf-pick-btn > .caret,
+  .btn > .caret, .rf-pick-btn > .caret, a.action > .caret, a.create > .caret, a.edit > .caret, a.confirm > .caret, a.cancel > .caret, a.delete > .caret,
   .dropup > .btn > .caret,
-  .dropup > .rf-pick-btn > .caret {
+  .dropup > .rf-pick-btn > .caret,
+  .dropup > a.action > .caret,
+  .dropup > a.create > .caret,
+  .dropup > a.edit > .caret,
+  .dropup > a.confirm > .caret,
+  .dropup > a.cancel > .caret,
+  .dropup > a.delete > .caret {
     border-top-color: #000 !important;
   }
 
@@ -3077,7 +3083,13 @@ input[type="checkbox"],
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
-.input-group-sm > .input-group-btn > .rf-pick-btn {
+.input-group-sm > .input-group-btn > .rf-pick-btn,
+.input-group-sm > .input-group-btn > a.action,
+.input-group-sm > .input-group-btn > a.create,
+.input-group-sm > .input-group-btn > a.edit,
+.input-group-sm > .input-group-btn > a.confirm,
+.input-group-sm > .input-group-btn > a.cancel,
+.input-group-sm > .input-group-btn > a.delete {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -3108,7 +3120,13 @@ select[multiple].input-sm,
 .input-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
-.input-group-lg > .input-group-btn > .rf-pick-btn {
+.input-group-lg > .input-group-btn > .rf-pick-btn,
+.input-group-lg > .input-group-btn > a.action,
+.input-group-lg > .input-group-btn > a.create,
+.input-group-lg > .input-group-btn > a.edit,
+.input-group-lg > .input-group-btn > a.confirm,
+.input-group-lg > .input-group-btn > a.cancel,
+.input-group-lg > .input-group-btn > a.delete {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -3158,7 +3176,13 @@ select[multiple].input-lg,
 .input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
-.input-group-lg > .input-group-btn > .rf-pick-btn + .form-control-feedback {
+.input-group-lg > .input-group-btn > .rf-pick-btn + .form-control-feedback,
+.input-group-lg > .input-group-btn > a.action + .form-control-feedback,
+.input-group-lg > .input-group-btn > a.create + .form-control-feedback,
+.input-group-lg > .input-group-btn > a.edit + .form-control-feedback,
+.input-group-lg > .input-group-btn > a.confirm + .form-control-feedback,
+.input-group-lg > .input-group-btn > a.cancel + .form-control-feedback,
+.input-group-lg > .input-group-btn > a.delete + .form-control-feedback {
   width: 46px;
   height: 46px;
   line-height: 46px;
@@ -3167,7 +3191,13 @@ select[multiple].input-lg,
 .input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
-.input-group-sm > .input-group-btn > .rf-pick-btn + .form-control-feedback {
+.input-group-sm > .input-group-btn > .rf-pick-btn + .form-control-feedback,
+.input-group-sm > .input-group-btn > a.action + .form-control-feedback,
+.input-group-sm > .input-group-btn > a.create + .form-control-feedback,
+.input-group-sm > .input-group-btn > a.edit + .form-control-feedback,
+.input-group-sm > .input-group-btn > a.confirm + .form-control-feedback,
+.input-group-sm > .input-group-btn > a.cancel + .form-control-feedback,
+.input-group-sm > .input-group-btn > a.delete + .form-control-feedback {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -3353,7 +3383,7 @@ select[multiple].input-lg,
   right: 15px;
 }
 
-.btn, .rf-pick-btn {
+.btn, .rf-pick-btn, a.action, a.create, a.edit, a.confirm, a.cancel, a.delete {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -3372,22 +3402,22 @@ select[multiple].input-lg,
   -ms-user-select: none;
   user-select: none;
 }
-.btn:focus, .rf-pick-btn:focus, .btn:active:focus, .rf-pick-btn:active:focus, .btn.active:focus, .active.rf-pick-btn:focus, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel:focus, .rf-pick-lst-scrl .btn.rf-pick-sel:focus {
+.btn:focus, .rf-pick-btn:focus, a.action:focus, a.create:focus, a.edit:focus, a.confirm:focus, a.cancel:focus, a.delete:focus, .btn:active:focus, .rf-pick-btn:active:focus, a.action:active:focus, a.create:active:focus, a.edit:active:focus, a.confirm:active:focus, a.cancel:active:focus, a.delete:active:focus, .btn.active:focus, .active.rf-pick-btn:focus, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel:focus, .rf-pick-lst-scrl .btn.rf-pick-sel:focus, .rf-pick-lst-scrl a.rf-pick-sel.action:focus, .rf-pick-lst-scrl a.rf-pick-sel.create:focus, .rf-pick-lst-scrl a.rf-pick-sel.edit:focus, .rf-pick-lst-scrl a.rf-pick-sel.confirm:focus, .rf-pick-lst-scrl a.rf-pick-sel.cancel:focus, .rf-pick-lst-scrl a.rf-pick-sel.delete:focus, a.active.action:focus, a.active.create:focus, a.active.edit:focus, a.active.confirm:focus, a.active.cancel:focus, a.active.delete:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.btn:hover, .rf-pick-btn:hover, .btn:focus, .rf-pick-btn:focus {
+.btn:hover, .rf-pick-btn:hover, a.action:hover, a.create:hover, a.edit:hover, a.confirm:hover, a.cancel:hover, a.delete:hover, .btn:focus, .rf-pick-btn:focus, a.action:focus, a.create:focus, a.edit:focus, a.confirm:focus, a.cancel:focus, a.delete:focus {
   color: #333333;
   text-decoration: none;
 }
-.btn:active, .rf-pick-btn:active, .btn.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn.rf-pick-sel {
+.btn:active, .rf-pick-btn:active, a.action:active, a.create:active, a.edit:active, a.confirm:active, a.cancel:active, a.delete:active, .btn.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.action, .rf-pick-lst-scrl a.rf-pick-sel.create, .rf-pick-lst-scrl a.rf-pick-sel.edit, .rf-pick-lst-scrl a.rf-pick-sel.confirm, .rf-pick-lst-scrl a.rf-pick-sel.cancel, .rf-pick-lst-scrl a.rf-pick-sel.delete, a.active.action, a.active.create, a.active.edit, a.active.confirm, a.active.cancel, a.active.delete {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.btn.disabled, .disabled.rf-pick-btn, .btn[disabled], [disabled].rf-pick-btn, fieldset[disabled] .btn, fieldset[disabled] .rf-pick-btn {
+.btn.disabled, .disabled.rf-pick-btn, a.disabled.action, a.disabled.create, a.disabled.edit, a.disabled.confirm, a.disabled.cancel, a.disabled.delete, .btn[disabled], [disabled].rf-pick-btn, a[disabled].action, a[disabled].create, a[disabled].edit, a[disabled].confirm, a[disabled].cancel, a[disabled].delete, fieldset[disabled] .btn, fieldset[disabled] .rf-pick-btn, fieldset[disabled] a.action, fieldset[disabled] a.create, fieldset[disabled] a.edit, fieldset[disabled] a.confirm, fieldset[disabled] a.cancel, fieldset[disabled] a.delete {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -3396,68 +3426,68 @@ select[multiple].input-lg,
   box-shadow: none;
 }
 
-.btn-default, .rf-pick-btn {
+.btn-default, .rf-pick-btn, a.action, a.edit {
   color: #333333;
   background-color: white;
   border-color: #cccccc;
 }
-.btn-default:hover, .rf-pick-btn:hover, .btn-default:focus, .rf-pick-btn:focus, .btn-default:active, .rf-pick-btn:active, .btn-default.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default.rf-pick-sel, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle.rf-pick-btn {
+.btn-default:hover, .rf-pick-btn:hover, a.action:hover, a.edit:hover, .btn-default:focus, .rf-pick-btn:focus, a.action:focus, a.edit:focus, .btn-default:active, .rf-pick-btn:active, a.action:active, a.edit:active, .btn-default.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.action, .rf-pick-lst-scrl a.rf-pick-sel.edit, a.active.action, a.active.edit, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle.rf-pick-btn, .open > a.dropdown-toggle.action, .open > a.dropdown-toggle.edit {
   color: #333333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
-.btn-default:active, .rf-pick-btn:active, .btn-default.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default.rf-pick-sel, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle.rf-pick-btn {
+.btn-default:active, .rf-pick-btn:active, a.action:active, a.edit:active, .btn-default.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.action, .rf-pick-lst-scrl a.rf-pick-sel.edit, a.active.action, a.active.edit, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle.rf-pick-btn, .open > a.dropdown-toggle.action, .open > a.dropdown-toggle.edit {
   background-image: none;
 }
-.btn-default.disabled, .disabled.rf-pick-btn, .btn-default.disabled:hover, .disabled.rf-pick-btn:hover, .btn-default.disabled:focus, .disabled.rf-pick-btn:focus, .btn-default.disabled:active, .disabled.rf-pick-btn:active, .btn-default.disabled.active, .disabled.active.rf-pick-btn, .rf-pick-lst-scrl .disabled.rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default.disabled.rf-pick-sel, .btn-default[disabled], [disabled].rf-pick-btn, .btn-default[disabled]:hover, [disabled].rf-pick-btn:hover, .btn-default[disabled]:focus, [disabled].rf-pick-btn:focus, .btn-default[disabled]:active, [disabled].rf-pick-btn:active, .btn-default[disabled].active, [disabled].active.rf-pick-btn, .rf-pick-lst-scrl [disabled].rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default[disabled].rf-pick-sel, fieldset[disabled] .btn-default, fieldset[disabled] .rf-pick-btn, fieldset[disabled] .btn-default:hover, fieldset[disabled] .rf-pick-btn:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .rf-pick-btn:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .rf-pick-btn:active, fieldset[disabled] .btn-default.active, fieldset[disabled] .active.rf-pick-btn, fieldset[disabled] .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl fieldset[disabled] .rf-pick-btn.rf-pick-sel, fieldset[disabled] .rf-pick-lst-scrl .btn-default.rf-pick-sel, .rf-pick-lst-scrl fieldset[disabled] .btn-default.rf-pick-sel {
+.btn-default.disabled, .disabled.rf-pick-btn, a.disabled.action, a.disabled.edit, .btn-default.disabled:hover, .disabled.rf-pick-btn:hover, a.disabled.action:hover, a.disabled.edit:hover, .btn-default.disabled:focus, .disabled.rf-pick-btn:focus, a.disabled.action:focus, a.disabled.edit:focus, .btn-default.disabled:active, .disabled.rf-pick-btn:active, a.disabled.action:active, a.disabled.edit:active, .btn-default.disabled.active, .disabled.active.rf-pick-btn, .rf-pick-lst-scrl .disabled.rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default.disabled.rf-pick-sel, .rf-pick-lst-scrl a.disabled.rf-pick-sel.action, .rf-pick-lst-scrl a.disabled.rf-pick-sel.edit, a.disabled.active.action, a.disabled.active.edit, .btn-default[disabled], [disabled].rf-pick-btn, a[disabled].action, a[disabled].edit, .btn-default[disabled]:hover, [disabled].rf-pick-btn:hover, a[disabled].action:hover, a[disabled].edit:hover, .btn-default[disabled]:focus, [disabled].rf-pick-btn:focus, a[disabled].action:focus, a[disabled].edit:focus, .btn-default[disabled]:active, [disabled].rf-pick-btn:active, a[disabled].action:active, a[disabled].edit:active, .btn-default[disabled].active, [disabled].active.rf-pick-btn, .rf-pick-lst-scrl [disabled].rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default[disabled].rf-pick-sel, .rf-pick-lst-scrl a[disabled].rf-pick-sel.action, .rf-pick-lst-scrl a[disabled].rf-pick-sel.edit, a[disabled].active.action, a[disabled].active.edit, fieldset[disabled] .btn-default, fieldset[disabled] .rf-pick-btn, fieldset[disabled] a.action, fieldset[disabled] a.edit, fieldset[disabled] .btn-default:hover, fieldset[disabled] .rf-pick-btn:hover, fieldset[disabled] a.action:hover, fieldset[disabled] a.edit:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .rf-pick-btn:focus, fieldset[disabled] a.action:focus, fieldset[disabled] a.edit:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .rf-pick-btn:active, fieldset[disabled] a.action:active, fieldset[disabled] a.edit:active, fieldset[disabled] .btn-default.active, fieldset[disabled] .active.rf-pick-btn, fieldset[disabled] .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl fieldset[disabled] .rf-pick-btn.rf-pick-sel, fieldset[disabled] .rf-pick-lst-scrl .btn-default.rf-pick-sel, .rf-pick-lst-scrl fieldset[disabled] .btn-default.rf-pick-sel, fieldset[disabled] .rf-pick-lst-scrl a.rf-pick-sel.action, .rf-pick-lst-scrl fieldset[disabled] a.rf-pick-sel.action, fieldset[disabled] .rf-pick-lst-scrl a.rf-pick-sel.edit, .rf-pick-lst-scrl fieldset[disabled] a.rf-pick-sel.edit, fieldset[disabled] a.active.action, fieldset[disabled] a.active.edit {
   background-color: white;
   border-color: #cccccc;
 }
-.btn-default .badge, .rf-pick-btn .badge {
+.btn-default .badge, .rf-pick-btn .badge, a.action .badge, a.edit .badge {
   color: white;
   background-color: #333333;
 }
 
-.btn-primary {
+.btn-primary, a.create {
   color: white;
   background-color: #428bca;
   border-color: #357ebd;
 }
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .rf-pick-lst-scrl .btn-primary.rf-pick-sel, .open > .btn-primary.dropdown-toggle {
+.btn-primary:hover, a.create:hover, .btn-primary:focus, a.create:focus, .btn-primary:active, a.create:active, .btn-primary.active, .rf-pick-lst-scrl .btn-primary.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.create, a.active.create, .open > .btn-primary.dropdown-toggle, .open > a.dropdown-toggle.create {
   color: white;
   background-color: #3071a9;
   border-color: #285e8e;
 }
-.btn-primary:active, .btn-primary.active, .rf-pick-lst-scrl .btn-primary.rf-pick-sel, .open > .btn-primary.dropdown-toggle {
+.btn-primary:active, a.create:active, .btn-primary.active, .rf-pick-lst-scrl .btn-primary.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.create, a.active.create, .open > .btn-primary.dropdown-toggle, .open > a.dropdown-toggle.create {
   background-image: none;
 }
-.btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .rf-pick-lst-scrl .btn-primary.disabled.rf-pick-sel, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, .rf-pick-lst-scrl .btn-primary[disabled].rf-pick-sel, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active, fieldset[disabled] .rf-pick-lst-scrl .btn-primary.rf-pick-sel, .rf-pick-lst-scrl fieldset[disabled] .btn-primary.rf-pick-sel {
+.btn-primary.disabled, a.disabled.create, .btn-primary.disabled:hover, a.disabled.create:hover, .btn-primary.disabled:focus, a.disabled.create:focus, .btn-primary.disabled:active, a.disabled.create:active, .btn-primary.disabled.active, .rf-pick-lst-scrl .btn-primary.disabled.rf-pick-sel, .rf-pick-lst-scrl a.disabled.rf-pick-sel.create, a.disabled.active.create, .btn-primary[disabled], a[disabled].create, .btn-primary[disabled]:hover, a[disabled].create:hover, .btn-primary[disabled]:focus, a[disabled].create:focus, .btn-primary[disabled]:active, a[disabled].create:active, .btn-primary[disabled].active, .rf-pick-lst-scrl .btn-primary[disabled].rf-pick-sel, .rf-pick-lst-scrl a[disabled].rf-pick-sel.create, a[disabled].active.create, fieldset[disabled] .btn-primary, fieldset[disabled] a.create, fieldset[disabled] .btn-primary:hover, fieldset[disabled] a.create:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] a.create:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] a.create:active, fieldset[disabled] .btn-primary.active, fieldset[disabled] .rf-pick-lst-scrl .btn-primary.rf-pick-sel, .rf-pick-lst-scrl fieldset[disabled] .btn-primary.rf-pick-sel, fieldset[disabled] .rf-pick-lst-scrl a.rf-pick-sel.create, .rf-pick-lst-scrl fieldset[disabled] a.rf-pick-sel.create, fieldset[disabled] a.active.create {
   background-color: #428bca;
   border-color: #357ebd;
 }
-.btn-primary .badge {
+.btn-primary .badge, a.create .badge {
   color: #428bca;
   background-color: white;
 }
 
-.btn-success {
+.btn-success, a.confirm {
   color: white;
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
-.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .rf-pick-lst-scrl .btn-success.rf-pick-sel, .open > .btn-success.dropdown-toggle {
+.btn-success:hover, a.confirm:hover, .btn-success:focus, a.confirm:focus, .btn-success:active, a.confirm:active, .btn-success.active, .rf-pick-lst-scrl .btn-success.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.confirm, a.active.confirm, .open > .btn-success.dropdown-toggle, .open > a.dropdown-toggle.confirm {
   color: white;
   background-color: #449d44;
   border-color: #398439;
 }
-.btn-success:active, .btn-success.active, .rf-pick-lst-scrl .btn-success.rf-pick-sel, .open > .btn-success.dropdown-toggle {
+.btn-success:active, a.confirm:active, .btn-success.active, .rf-pick-lst-scrl .btn-success.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.confirm, a.active.confirm, .open > .btn-success.dropdown-toggle, .open > a.dropdown-toggle.confirm {
   background-image: none;
 }
-.btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active, .btn-success.disabled.active, .rf-pick-lst-scrl .btn-success.disabled.rf-pick-sel, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active, .btn-success[disabled].active, .rf-pick-lst-scrl .btn-success[disabled].rf-pick-sel, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active, fieldset[disabled] .rf-pick-lst-scrl .btn-success.rf-pick-sel, .rf-pick-lst-scrl fieldset[disabled] .btn-success.rf-pick-sel {
+.btn-success.disabled, a.disabled.confirm, .btn-success.disabled:hover, a.disabled.confirm:hover, .btn-success.disabled:focus, a.disabled.confirm:focus, .btn-success.disabled:active, a.disabled.confirm:active, .btn-success.disabled.active, .rf-pick-lst-scrl .btn-success.disabled.rf-pick-sel, .rf-pick-lst-scrl a.disabled.rf-pick-sel.confirm, a.disabled.active.confirm, .btn-success[disabled], a[disabled].confirm, .btn-success[disabled]:hover, a[disabled].confirm:hover, .btn-success[disabled]:focus, a[disabled].confirm:focus, .btn-success[disabled]:active, a[disabled].confirm:active, .btn-success[disabled].active, .rf-pick-lst-scrl .btn-success[disabled].rf-pick-sel, .rf-pick-lst-scrl a[disabled].rf-pick-sel.confirm, a[disabled].active.confirm, fieldset[disabled] .btn-success, fieldset[disabled] a.confirm, fieldset[disabled] .btn-success:hover, fieldset[disabled] a.confirm:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] a.confirm:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] a.confirm:active, fieldset[disabled] .btn-success.active, fieldset[disabled] .rf-pick-lst-scrl .btn-success.rf-pick-sel, .rf-pick-lst-scrl fieldset[disabled] .btn-success.rf-pick-sel, fieldset[disabled] .rf-pick-lst-scrl a.rf-pick-sel.confirm, .rf-pick-lst-scrl fieldset[disabled] a.rf-pick-sel.confirm, fieldset[disabled] a.active.confirm {
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
-.btn-success .badge {
+.btn-success .badge, a.confirm .badge {
   color: #5cb85c;
   background-color: white;
 }
@@ -3506,67 +3536,67 @@ select[multiple].input-lg,
   background-color: white;
 }
 
-.btn-danger {
+.btn-danger, a.delete {
   color: white;
   background-color: #d9534f;
   border-color: #d43f3a;
 }
-.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .rf-pick-lst-scrl .btn-danger.rf-pick-sel, .open > .btn-danger.dropdown-toggle {
+.btn-danger:hover, a.delete:hover, .btn-danger:focus, a.delete:focus, .btn-danger:active, a.delete:active, .btn-danger.active, .rf-pick-lst-scrl .btn-danger.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.delete, a.active.delete, .open > .btn-danger.dropdown-toggle, .open > a.dropdown-toggle.delete {
   color: white;
   background-color: #c9302c;
   border-color: #ac2925;
 }
-.btn-danger:active, .btn-danger.active, .rf-pick-lst-scrl .btn-danger.rf-pick-sel, .open > .btn-danger.dropdown-toggle {
+.btn-danger:active, a.delete:active, .btn-danger.active, .rf-pick-lst-scrl .btn-danger.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.delete, a.active.delete, .open > .btn-danger.dropdown-toggle, .open > a.dropdown-toggle.delete {
   background-image: none;
 }
-.btn-danger.disabled, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled:active, .btn-danger.disabled.active, .rf-pick-lst-scrl .btn-danger.disabled.rf-pick-sel, .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled]:active, .btn-danger[disabled].active, .rf-pick-lst-scrl .btn-danger[disabled].rf-pick-sel, fieldset[disabled] .btn-danger, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] .btn-danger.active, fieldset[disabled] .rf-pick-lst-scrl .btn-danger.rf-pick-sel, .rf-pick-lst-scrl fieldset[disabled] .btn-danger.rf-pick-sel {
+.btn-danger.disabled, a.disabled.delete, .btn-danger.disabled:hover, a.disabled.delete:hover, .btn-danger.disabled:focus, a.disabled.delete:focus, .btn-danger.disabled:active, a.disabled.delete:active, .btn-danger.disabled.active, .rf-pick-lst-scrl .btn-danger.disabled.rf-pick-sel, .rf-pick-lst-scrl a.disabled.rf-pick-sel.delete, a.disabled.active.delete, .btn-danger[disabled], a[disabled].delete, .btn-danger[disabled]:hover, a[disabled].delete:hover, .btn-danger[disabled]:focus, a[disabled].delete:focus, .btn-danger[disabled]:active, a[disabled].delete:active, .btn-danger[disabled].active, .rf-pick-lst-scrl .btn-danger[disabled].rf-pick-sel, .rf-pick-lst-scrl a[disabled].rf-pick-sel.delete, a[disabled].active.delete, fieldset[disabled] .btn-danger, fieldset[disabled] a.delete, fieldset[disabled] .btn-danger:hover, fieldset[disabled] a.delete:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] a.delete:focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] a.delete:active, fieldset[disabled] .btn-danger.active, fieldset[disabled] .rf-pick-lst-scrl .btn-danger.rf-pick-sel, .rf-pick-lst-scrl fieldset[disabled] .btn-danger.rf-pick-sel, fieldset[disabled] .rf-pick-lst-scrl a.rf-pick-sel.delete, .rf-pick-lst-scrl fieldset[disabled] a.rf-pick-sel.delete, fieldset[disabled] a.active.delete {
   background-color: #d9534f;
   border-color: #d43f3a;
 }
-.btn-danger .badge {
+.btn-danger .badge, a.delete .badge {
   color: #d9534f;
   background-color: white;
 }
 
-.btn-link {
+.btn-link, a.cancel {
   color: #428bca;
   font-weight: normal;
   cursor: pointer;
   border-radius: 0;
 }
-.btn-link, .btn-link:active, .btn-link[disabled], fieldset[disabled] .btn-link {
+.btn-link, a.cancel, .btn-link:active, a.cancel:active, .btn-link[disabled], a[disabled].cancel, fieldset[disabled] .btn-link, fieldset[disabled] a.cancel {
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
+.btn-link, a.cancel, .btn-link:hover, a.cancel:hover, .btn-link:focus, a.cancel:focus, .btn-link:active, a.cancel:active {
   border-color: transparent;
 }
-.btn-link:hover, .btn-link:focus {
+.btn-link:hover, a.cancel:hover, .btn-link:focus, a.cancel:focus {
   color: #2a6496;
   text-decoration: underline;
   background-color: transparent;
 }
-.btn-link[disabled]:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:hover, fieldset[disabled] .btn-link:focus {
+.btn-link[disabled]:hover, a[disabled].cancel:hover, .btn-link[disabled]:focus, a[disabled].cancel:focus, fieldset[disabled] .btn-link:hover, fieldset[disabled] a.cancel:hover, fieldset[disabled] .btn-link:focus, fieldset[disabled] a.cancel:focus {
   color: #999999;
   text-decoration: none;
 }
 
-.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .rf-pick-btn {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .rf-pick-btn, .btn-group-lg > a.action, .btn-group-lg > a.create, .btn-group-lg > a.edit, .btn-group-lg > a.confirm, .btn-group-lg > a.cancel, .btn-group-lg > a.delete {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px;
 }
 
-.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .rf-pick-btn {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .rf-pick-btn, .btn-group-sm > a.action, .btn-group-sm > a.create, .btn-group-sm > a.edit, .btn-group-sm > a.confirm, .btn-group-sm > a.cancel, .btn-group-sm > a.delete, a.edit, a.delete {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
 }
 
-.btn-xs, .btn-group-xs > .btn, .btn-group-xs > .rf-pick-btn {
+.btn-xs, .btn-group-xs > .btn, .btn-group-xs > .rf-pick-btn, .btn-group-xs > a.action, .btn-group-xs > a.create, .btn-group-xs > a.edit, .btn-group-xs > a.confirm, .btn-group-xs > a.cancel, .btn-group-xs > a.delete {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -3777,36 +3807,90 @@ tbody.collapse.in {
   display: inline-block;
   vertical-align: middle;
 }
-.btn-group > .btn, .btn-group > .rf-pick-btn,
+.btn-group > .btn, .btn-group > .rf-pick-btn, .btn-group > a.action, .btn-group > a.create, .btn-group > a.edit, .btn-group > a.confirm, .btn-group > a.cancel, .btn-group > a.delete,
 .btn-group-vertical > .btn,
-.btn-group-vertical > .rf-pick-btn {
+.btn-group-vertical > .rf-pick-btn,
+.btn-group-vertical > a.action,
+.btn-group-vertical > a.create,
+.btn-group-vertical > a.edit,
+.btn-group-vertical > a.confirm,
+.btn-group-vertical > a.cancel,
+.btn-group-vertical > a.delete {
   position: relative;
   float: left;
 }
-.btn-group > .btn:hover, .btn-group > .rf-pick-btn:hover, .btn-group > .btn:focus, .btn-group > .rf-pick-btn:focus, .btn-group > .btn:active, .btn-group > .rf-pick-btn:active, .btn-group > .btn.active, .btn-group > .active.rf-pick-btn, .rf-pick-lst-scrl .btn-group > .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-group > .btn.rf-pick-sel,
+.btn-group > .btn:hover, .btn-group > .rf-pick-btn:hover, .btn-group > a.action:hover, .btn-group > a.create:hover, .btn-group > a.edit:hover, .btn-group > a.confirm:hover, .btn-group > a.cancel:hover, .btn-group > a.delete:hover, .btn-group > .btn:focus, .btn-group > .rf-pick-btn:focus, .btn-group > a.action:focus, .btn-group > a.create:focus, .btn-group > a.edit:focus, .btn-group > a.confirm:focus, .btn-group > a.cancel:focus, .btn-group > a.delete:focus, .btn-group > .btn:active, .btn-group > .rf-pick-btn:active, .btn-group > a.action:active, .btn-group > a.create:active, .btn-group > a.edit:active, .btn-group > a.confirm:active, .btn-group > a.cancel:active, .btn-group > a.delete:active, .btn-group > .btn.active, .btn-group > .active.rf-pick-btn, .rf-pick-lst-scrl .btn-group > .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-group > .btn.rf-pick-sel, .rf-pick-lst-scrl .btn-group > a.rf-pick-sel.action, .rf-pick-lst-scrl .btn-group > a.rf-pick-sel.create, .rf-pick-lst-scrl .btn-group > a.rf-pick-sel.edit, .rf-pick-lst-scrl .btn-group > a.rf-pick-sel.confirm, .rf-pick-lst-scrl .btn-group > a.rf-pick-sel.cancel, .rf-pick-lst-scrl .btn-group > a.rf-pick-sel.delete, .btn-group > a.active.action, .btn-group > a.active.create, .btn-group > a.active.edit, .btn-group > a.active.confirm, .btn-group > a.active.cancel, .btn-group > a.active.delete,
 .btn-group-vertical > .btn:hover,
 .btn-group-vertical > .rf-pick-btn:hover,
+.btn-group-vertical > a.action:hover,
+.btn-group-vertical > a.create:hover,
+.btn-group-vertical > a.edit:hover,
+.btn-group-vertical > a.confirm:hover,
+.btn-group-vertical > a.cancel:hover,
+.btn-group-vertical > a.delete:hover,
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > .rf-pick-btn:focus,
+.btn-group-vertical > a.action:focus,
+.btn-group-vertical > a.create:focus,
+.btn-group-vertical > a.edit:focus,
+.btn-group-vertical > a.confirm:focus,
+.btn-group-vertical > a.cancel:focus,
+.btn-group-vertical > a.delete:focus,
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > .rf-pick-btn:active,
+.btn-group-vertical > a.action:active,
+.btn-group-vertical > a.create:active,
+.btn-group-vertical > a.edit:active,
+.btn-group-vertical > a.confirm:active,
+.btn-group-vertical > a.cancel:active,
+.btn-group-vertical > a.delete:active,
 .btn-group-vertical > .btn.active,
 .btn-group-vertical > .active.rf-pick-btn,
 .rf-pick-lst-scrl .btn-group-vertical > .rf-pick-btn.rf-pick-sel,
-.rf-pick-lst-scrl .btn-group-vertical > .btn.rf-pick-sel {
+.rf-pick-lst-scrl .btn-group-vertical > .btn.rf-pick-sel,
+.rf-pick-lst-scrl .btn-group-vertical > a.rf-pick-sel.action,
+.rf-pick-lst-scrl .btn-group-vertical > a.rf-pick-sel.create,
+.rf-pick-lst-scrl .btn-group-vertical > a.rf-pick-sel.edit,
+.rf-pick-lst-scrl .btn-group-vertical > a.rf-pick-sel.confirm,
+.rf-pick-lst-scrl .btn-group-vertical > a.rf-pick-sel.cancel,
+.rf-pick-lst-scrl .btn-group-vertical > a.rf-pick-sel.delete,
+.btn-group-vertical > a.active.action,
+.btn-group-vertical > a.active.create,
+.btn-group-vertical > a.active.edit,
+.btn-group-vertical > a.active.confirm,
+.btn-group-vertical > a.active.cancel,
+.btn-group-vertical > a.active.delete {
   z-index: 2;
 }
-.btn-group > .btn:focus, .btn-group > .rf-pick-btn:focus,
+.btn-group > .btn:focus, .btn-group > .rf-pick-btn:focus, .btn-group > a.action:focus, .btn-group > a.create:focus, .btn-group > a.edit:focus, .btn-group > a.confirm:focus, .btn-group > a.cancel:focus, .btn-group > a.delete:focus,
 .btn-group-vertical > .btn:focus,
-.btn-group-vertical > .rf-pick-btn:focus {
+.btn-group-vertical > .rf-pick-btn:focus,
+.btn-group-vertical > a.action:focus,
+.btn-group-vertical > a.create:focus,
+.btn-group-vertical > a.edit:focus,
+.btn-group-vertical > a.confirm:focus,
+.btn-group-vertical > a.cancel:focus,
+.btn-group-vertical > a.delete:focus {
   outline: 0;
 }
 
-.btn-group .btn + .btn, .btn-group .rf-pick-btn + .btn, .btn-group .btn + .rf-pick-btn, .btn-group .rf-pick-btn + .rf-pick-btn,
+.btn-group .btn + .btn, .btn-group .rf-pick-btn + .btn, .btn-group a.action + .btn, .btn-group a.create + .btn, .btn-group a.edit + .btn, .btn-group a.confirm + .btn, .btn-group a.cancel + .btn, .btn-group a.delete + .btn, .btn-group .btn + .rf-pick-btn, .btn-group .rf-pick-btn + .rf-pick-btn, .btn-group a.action + .rf-pick-btn, .btn-group a.create + .rf-pick-btn, .btn-group a.edit + .rf-pick-btn, .btn-group a.confirm + .rf-pick-btn, .btn-group a.cancel + .rf-pick-btn, .btn-group a.delete + .rf-pick-btn, .btn-group .btn + a.action, .btn-group .rf-pick-btn + a.action, .btn-group a.action + a.action, .btn-group a.create + a.action, .btn-group a.edit + a.action, .btn-group a.confirm + a.action, .btn-group a.cancel + a.action, .btn-group a.delete + a.action, .btn-group .btn + a.create, .btn-group .rf-pick-btn + a.create, .btn-group a.action + a.create, .btn-group a.create + a.create, .btn-group a.edit + a.create, .btn-group a.confirm + a.create, .btn-group a.cancel + a.create, .btn-group a.delete + a.create, .btn-group .btn + a.edit, .btn-group .rf-pick-btn + a.edit, .btn-group a.action + a.edit, .btn-group a.create + a.edit, .btn-group a.edit + a.edit, .btn-group a.confirm + a.edit, .btn-group a.cancel + a.edit, .btn-group a.delete + a.edit, .btn-group .btn + a.confirm, .btn-group .rf-pick-btn + a.confirm, .btn-group a.action + a.confirm, .btn-group a.create + a.confirm, .btn-group a.edit + a.confirm, .btn-group a.confirm + a.confirm, .btn-group a.cancel + a.confirm, .btn-group a.delete + a.confirm, .btn-group .btn + a.cancel, .btn-group .rf-pick-btn + a.cancel, .btn-group a.action + a.cancel, .btn-group a.create + a.cancel, .btn-group a.edit + a.cancel, .btn-group a.confirm + a.cancel, .btn-group a.cancel + a.cancel, .btn-group a.delete + a.cancel, .btn-group .btn + a.delete, .btn-group .rf-pick-btn + a.delete, .btn-group a.action + a.delete, .btn-group a.create + a.delete, .btn-group a.edit + a.delete, .btn-group a.confirm + a.delete, .btn-group a.cancel + a.delete, .btn-group a.delete + a.delete,
 .btn-group .btn + .btn-group,
 .btn-group .rf-pick-btn + .btn-group,
+.btn-group a.action + .btn-group,
+.btn-group a.create + .btn-group,
+.btn-group a.edit + .btn-group,
+.btn-group a.confirm + .btn-group,
+.btn-group a.cancel + .btn-group,
+.btn-group a.delete + .btn-group,
 .btn-group .btn-group + .btn,
 .btn-group .btn-group + .rf-pick-btn,
+.btn-group .btn-group + a.action,
+.btn-group .btn-group + a.create,
+.btn-group .btn-group + a.edit,
+.btn-group .btn-group + a.confirm,
+.btn-group .btn-group + a.cancel,
+.btn-group .btn-group + a.delete,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px;
 }
@@ -3825,25 +3909,25 @@ tbody.collapse.in {
 .btn-toolbar .input-group {
   float: left;
 }
-.btn-toolbar > .btn, .btn-toolbar > .rf-pick-btn,
+.btn-toolbar > .btn, .btn-toolbar > .rf-pick-btn, .btn-toolbar > a.action, .btn-toolbar > a.create, .btn-toolbar > a.edit, .btn-toolbar > a.confirm, .btn-toolbar > a.cancel, .btn-toolbar > a.delete,
 .btn-toolbar > .btn-group,
 .btn-toolbar > .input-group {
   margin-left: 5px;
 }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .rf-pick-btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .rf-pick-btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > a.action:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > a.create:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > a.edit:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > a.confirm:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > a.cancel:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > a.delete:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
-.btn-group > .btn:first-child, .btn-group > .rf-pick-btn:first-child {
+.btn-group > .btn:first-child, .btn-group > .rf-pick-btn:first-child, .btn-group > a.action:first-child, .btn-group > a.create:first-child, .btn-group > a.edit:first-child, .btn-group > a.confirm:first-child, .btn-group > a.cancel:first-child, .btn-group > a.delete:first-child {
   margin-left: 0;
 }
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .rf-pick-btn:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .rf-pick-btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > a.action:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > a.create:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > a.edit:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > a.confirm:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > a.cancel:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > a.delete:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-.btn-group > .btn:last-child:not(:first-child), .btn-group > .rf-pick-btn:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .rf-pick-btn:last-child:not(:first-child), .btn-group > a.action:last-child:not(:first-child), .btn-group > a.create:last-child:not(:first-child), .btn-group > a.edit:last-child:not(:first-child), .btn-group > a.confirm:last-child:not(:first-child), .btn-group > a.cancel:last-child:not(:first-child), .btn-group > a.delete:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -3853,17 +3937,17 @@ tbody.collapse.in {
   float: left;
 }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .rf-pick-btn {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .rf-pick-btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > a.action, .btn-group > .btn-group:not(:first-child):not(:last-child) > a.create, .btn-group > .btn-group:not(:first-child):not(:last-child) > a.edit, .btn-group > .btn-group:not(:first-child):not(:last-child) > a.confirm, .btn-group > .btn-group:not(:first-child):not(:last-child) > a.cancel, .btn-group > .btn-group:not(:first-child):not(:last-child) > a.delete {
   border-radius: 0;
 }
 
-.btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > .rf-pick-btn:last-child,
+.btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > .rf-pick-btn:last-child, .btn-group > .btn-group:first-child > a.action:last-child, .btn-group > .btn-group:first-child > a.create:last-child, .btn-group > .btn-group:first-child > a.edit:last-child, .btn-group > .btn-group:first-child > a.confirm:last-child, .btn-group > .btn-group:first-child > a.cancel:last-child, .btn-group > .btn-group:first-child > a.delete:last-child,
 .btn-group > .btn-group:first-child > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-.btn-group > .btn-group:last-child > .btn:first-child, .btn-group > .btn-group:last-child > .rf-pick-btn:first-child {
+.btn-group > .btn-group:last-child > .btn:first-child, .btn-group > .btn-group:last-child > .rf-pick-btn:first-child, .btn-group > .btn-group:last-child > a.action:first-child, .btn-group > .btn-group:last-child > a.create:first-child, .btn-group > .btn-group:last-child > a.edit:first-child, .btn-group > .btn-group:last-child > a.confirm:first-child, .btn-group > .btn-group:last-child > a.cancel:first-child, .btn-group > .btn-group:last-child > a.delete:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -3873,12 +3957,12 @@ tbody.collapse.in {
   outline: 0;
 }
 
-.btn-group > .btn + .dropdown-toggle, .btn-group > .rf-pick-btn + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, .btn-group > .rf-pick-btn + .dropdown-toggle, .btn-group > a.action + .dropdown-toggle, .btn-group > a.create + .dropdown-toggle, .btn-group > a.edit + .dropdown-toggle, .btn-group > a.confirm + .dropdown-toggle, .btn-group > a.cancel + .dropdown-toggle, .btn-group > a.delete + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
 }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .rf-pick-btn + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .rf-pick-btn + .dropdown-toggle, .btn-group-lg.btn-group > a.action + .dropdown-toggle, .btn-group-lg.btn-group > a.create + .dropdown-toggle, .btn-group-lg.btn-group > a.edit + .dropdown-toggle, .btn-group-lg.btn-group > a.confirm + .dropdown-toggle, .btn-group-lg.btn-group > a.cancel + .dropdown-toggle, .btn-group-lg.btn-group > a.delete + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3887,28 +3971,34 @@ tbody.collapse.in {
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.btn-group.open .dropdown-toggle.btn-link {
+.btn-group.open .dropdown-toggle.btn-link, .btn-group.open a.dropdown-toggle.cancel {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-.btn .caret, .rf-pick-btn .caret {
+.btn .caret, .rf-pick-btn .caret, a.action .caret, a.create .caret, a.edit .caret, a.confirm .caret, a.cancel .caret, a.delete .caret {
   margin-left: 0;
 }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .rf-pick-btn .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .rf-pick-btn .caret, .btn-group-lg > a.action .caret, .btn-group-lg > a.create .caret, .btn-group-lg > a.edit .caret, .btn-group-lg > a.confirm .caret, .btn-group-lg > a.cancel .caret, .btn-group-lg > a.delete .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0;
 }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .rf-pick-btn .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .rf-pick-btn .caret, .dropup .btn-group-lg > a.action .caret, .dropup .btn-group-lg > a.create .caret, .dropup .btn-group-lg > a.edit .caret, .dropup .btn-group-lg > a.confirm .caret, .dropup .btn-group-lg > a.cancel .caret, .dropup .btn-group-lg > a.delete .caret {
   border-width: 0 5px 5px;
 }
 
-.btn-group-vertical > .btn, .btn-group-vertical > .rf-pick-btn,
+.btn-group-vertical > .btn, .btn-group-vertical > .rf-pick-btn, .btn-group-vertical > a.action, .btn-group-vertical > a.create, .btn-group-vertical > a.edit, .btn-group-vertical > a.confirm, .btn-group-vertical > a.cancel, .btn-group-vertical > a.delete,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn,
-.btn-group-vertical > .btn-group > .rf-pick-btn {
+.btn-group-vertical > .btn-group > .rf-pick-btn,
+.btn-group-vertical > .btn-group > a.action,
+.btn-group-vertical > .btn-group > a.create,
+.btn-group-vertical > .btn-group > a.edit,
+.btn-group-vertical > .btn-group > a.confirm,
+.btn-group-vertical > .btn-group > a.cancel,
+.btn-group-vertical > .btn-group > a.delete {
   display: block;
   float: none;
   width: 100%;
@@ -3921,44 +4011,56 @@ tbody.collapse.in {
 .btn-group-vertical > .btn-group:after {
   clear: both;
 }
-.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .rf-pick-btn {
+.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .rf-pick-btn, .btn-group-vertical > .btn-group > a.action, .btn-group-vertical > .btn-group > a.create, .btn-group-vertical > .btn-group > a.edit, .btn-group-vertical > .btn-group > a.confirm, .btn-group-vertical > .btn-group > a.cancel, .btn-group-vertical > .btn-group > a.delete {
   float: none;
 }
-.btn-group-vertical > .btn + .btn, .btn-group-vertical > .rf-pick-btn + .btn, .btn-group-vertical > .btn + .rf-pick-btn, .btn-group-vertical > .rf-pick-btn + .rf-pick-btn,
+.btn-group-vertical > .btn + .btn, .btn-group-vertical > .rf-pick-btn + .btn, .btn-group-vertical > a.action + .btn, .btn-group-vertical > a.create + .btn, .btn-group-vertical > a.edit + .btn, .btn-group-vertical > a.confirm + .btn, .btn-group-vertical > a.cancel + .btn, .btn-group-vertical > a.delete + .btn, .btn-group-vertical > .btn + .rf-pick-btn, .btn-group-vertical > .rf-pick-btn + .rf-pick-btn, .btn-group-vertical > a.action + .rf-pick-btn, .btn-group-vertical > a.create + .rf-pick-btn, .btn-group-vertical > a.edit + .rf-pick-btn, .btn-group-vertical > a.confirm + .rf-pick-btn, .btn-group-vertical > a.cancel + .rf-pick-btn, .btn-group-vertical > a.delete + .rf-pick-btn, .btn-group-vertical > .btn + a.action, .btn-group-vertical > .rf-pick-btn + a.action, .btn-group-vertical > a.action + a.action, .btn-group-vertical > a.create + a.action, .btn-group-vertical > a.edit + a.action, .btn-group-vertical > a.confirm + a.action, .btn-group-vertical > a.cancel + a.action, .btn-group-vertical > a.delete + a.action, .btn-group-vertical > .btn + a.create, .btn-group-vertical > .rf-pick-btn + a.create, .btn-group-vertical > a.action + a.create, .btn-group-vertical > a.create + a.create, .btn-group-vertical > a.edit + a.create, .btn-group-vertical > a.confirm + a.create, .btn-group-vertical > a.cancel + a.create, .btn-group-vertical > a.delete + a.create, .btn-group-vertical > .btn + a.edit, .btn-group-vertical > .rf-pick-btn + a.edit, .btn-group-vertical > a.action + a.edit, .btn-group-vertical > a.create + a.edit, .btn-group-vertical > a.edit + a.edit, .btn-group-vertical > a.confirm + a.edit, .btn-group-vertical > a.cancel + a.edit, .btn-group-vertical > a.delete + a.edit, .btn-group-vertical > .btn + a.confirm, .btn-group-vertical > .rf-pick-btn + a.confirm, .btn-group-vertical > a.action + a.confirm, .btn-group-vertical > a.create + a.confirm, .btn-group-vertical > a.edit + a.confirm, .btn-group-vertical > a.confirm + a.confirm, .btn-group-vertical > a.cancel + a.confirm, .btn-group-vertical > a.delete + a.confirm, .btn-group-vertical > .btn + a.cancel, .btn-group-vertical > .rf-pick-btn + a.cancel, .btn-group-vertical > a.action + a.cancel, .btn-group-vertical > a.create + a.cancel, .btn-group-vertical > a.edit + a.cancel, .btn-group-vertical > a.confirm + a.cancel, .btn-group-vertical > a.cancel + a.cancel, .btn-group-vertical > a.delete + a.cancel, .btn-group-vertical > .btn + a.delete, .btn-group-vertical > .rf-pick-btn + a.delete, .btn-group-vertical > a.action + a.delete, .btn-group-vertical > a.create + a.delete, .btn-group-vertical > a.edit + a.delete, .btn-group-vertical > a.confirm + a.delete, .btn-group-vertical > a.cancel + a.delete, .btn-group-vertical > a.delete + a.delete,
 .btn-group-vertical > .btn + .btn-group,
 .btn-group-vertical > .rf-pick-btn + .btn-group,
+.btn-group-vertical > a.action + .btn-group,
+.btn-group-vertical > a.create + .btn-group,
+.btn-group-vertical > a.edit + .btn-group,
+.btn-group-vertical > a.confirm + .btn-group,
+.btn-group-vertical > a.cancel + .btn-group,
+.btn-group-vertical > a.delete + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
 .btn-group-vertical > .btn-group + .rf-pick-btn,
+.btn-group-vertical > .btn-group + a.action,
+.btn-group-vertical > .btn-group + a.create,
+.btn-group-vertical > .btn-group + a.edit,
+.btn-group-vertical > .btn-group + a.confirm,
+.btn-group-vertical > .btn-group + a.cancel,
+.btn-group-vertical > .btn-group + a.delete,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0;
 }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .rf-pick-btn:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .rf-pick-btn:not(:first-child):not(:last-child), .btn-group-vertical > a.action:not(:first-child):not(:last-child), .btn-group-vertical > a.create:not(:first-child):not(:last-child), .btn-group-vertical > a.edit:not(:first-child):not(:last-child), .btn-group-vertical > a.confirm:not(:first-child):not(:last-child), .btn-group-vertical > a.cancel:not(:first-child):not(:last-child), .btn-group-vertical > a.delete:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
-.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .rf-pick-btn:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .rf-pick-btn:first-child:not(:last-child), .btn-group-vertical > a.action:first-child:not(:last-child), .btn-group-vertical > a.create:first-child:not(:last-child), .btn-group-vertical > a.edit:first-child:not(:last-child), .btn-group-vertical > a.confirm:first-child:not(:last-child), .btn-group-vertical > a.cancel:first-child:not(:last-child), .btn-group-vertical > a.delete:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .rf-pick-btn:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .rf-pick-btn:last-child:not(:first-child), .btn-group-vertical > a.action:last-child:not(:first-child), .btn-group-vertical > a.create:last-child:not(:first-child), .btn-group-vertical > a.edit:last-child:not(:first-child), .btn-group-vertical > a.confirm:last-child:not(:first-child), .btn-group-vertical > a.cancel:last-child:not(:first-child), .btn-group-vertical > a.delete:last-child:not(:first-child) {
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .rf-pick-btn {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .rf-pick-btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a.action, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a.create, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a.edit, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a.confirm, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a.cancel, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a.delete {
   border-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .rf-pick-btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .rf-pick-btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > a.action:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > a.create:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > a.edit:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > a.confirm:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > a.cancel:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > a.delete:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .rf-pick-btn:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .rf-pick-btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > a.action:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > a.create:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > a.edit:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > a.confirm:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > a.cancel:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > a.delete:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -3969,19 +4071,25 @@ tbody.collapse.in {
   table-layout: fixed;
   border-collapse: separate;
 }
-.btn-group-justified > .btn, .btn-group-justified > .rf-pick-btn,
+.btn-group-justified > .btn, .btn-group-justified > .rf-pick-btn, .btn-group-justified > a.action, .btn-group-justified > a.create, .btn-group-justified > a.edit, .btn-group-justified > a.confirm, .btn-group-justified > a.cancel, .btn-group-justified > a.delete,
 .btn-group-justified > .btn-group {
   float: none;
   display: table-cell;
   width: 1%;
 }
-.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .rf-pick-btn {
+.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .rf-pick-btn, .btn-group-justified > .btn-group a.action, .btn-group-justified > .btn-group a.create, .btn-group-justified > .btn-group a.edit, .btn-group-justified > .btn-group a.confirm, .btn-group-justified > .btn-group a.cancel, .btn-group-justified > .btn-group a.delete {
   width: 100%;
 }
 
-[data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > .rf-pick-btn > input[type="radio"],
+[data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > .rf-pick-btn > input[type="radio"], [data-toggle="buttons"] > a.action > input[type="radio"], [data-toggle="buttons"] > a.create > input[type="radio"], [data-toggle="buttons"] > a.edit > input[type="radio"], [data-toggle="buttons"] > a.confirm > input[type="radio"], [data-toggle="buttons"] > a.cancel > input[type="radio"], [data-toggle="buttons"] > a.delete > input[type="radio"],
 [data-toggle="buttons"] > .btn > input[type="checkbox"],
-[data-toggle="buttons"] > .rf-pick-btn > input[type="checkbox"] {
+[data-toggle="buttons"] > .rf-pick-btn > input[type="checkbox"],
+[data-toggle="buttons"] > a.action > input[type="checkbox"],
+[data-toggle="buttons"] > a.create > input[type="checkbox"],
+[data-toggle="buttons"] > a.edit > input[type="checkbox"],
+[data-toggle="buttons"] > a.confirm > input[type="checkbox"],
+[data-toggle="buttons"] > a.cancel > input[type="checkbox"],
+[data-toggle="buttons"] > a.delete > input[type="checkbox"] {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -4037,7 +4145,13 @@ tbody.collapse.in {
 .input-group-addon.input-sm,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .input-group-addon.btn,
-.input-group-sm > .input-group-btn > .input-group-addon.rf-pick-btn {
+.input-group-sm > .input-group-btn > .input-group-addon.rf-pick-btn,
+.input-group-sm > .input-group-btn > a.input-group-addon.action,
+.input-group-sm > .input-group-btn > a.input-group-addon.create,
+.input-group-sm > .input-group-btn > a.input-group-addon.edit,
+.input-group-sm > .input-group-btn > a.input-group-addon.confirm,
+.input-group-sm > .input-group-btn > a.input-group-addon.cancel,
+.input-group-sm > .input-group-btn > a.input-group-addon.delete {
   padding: 5px 10px;
   font-size: 12px;
   border-radius: 3px;
@@ -4045,7 +4159,13 @@ tbody.collapse.in {
 .input-group-addon.input-lg,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .input-group-addon.btn,
-.input-group-lg > .input-group-btn > .input-group-addon.rf-pick-btn {
+.input-group-lg > .input-group-btn > .input-group-addon.rf-pick-btn,
+.input-group-lg > .input-group-btn > a.input-group-addon.action,
+.input-group-lg > .input-group-btn > a.input-group-addon.create,
+.input-group-lg > .input-group-btn > a.input-group-addon.edit,
+.input-group-lg > .input-group-btn > a.input-group-addon.confirm,
+.input-group-lg > .input-group-btn > a.input-group-addon.cancel,
+.input-group-lg > .input-group-btn > a.input-group-addon.delete {
   padding: 10px 16px;
   font-size: 18px;
   border-radius: 6px;
@@ -4059,13 +4179,37 @@ tbody.collapse.in {
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .rf-pick-btn,
+.input-group-btn:first-child > a.action,
+.input-group-btn:first-child > a.create,
+.input-group-btn:first-child > a.edit,
+.input-group-btn:first-child > a.confirm,
+.input-group-btn:first-child > a.cancel,
+.input-group-btn:first-child > a.delete,
 .input-group-btn:first-child > .btn-group > .btn,
 .input-group-btn:first-child > .btn-group > .rf-pick-btn,
+.input-group-btn:first-child > .btn-group > a.action,
+.input-group-btn:first-child > .btn-group > a.create,
+.input-group-btn:first-child > .btn-group > a.edit,
+.input-group-btn:first-child > .btn-group > a.confirm,
+.input-group-btn:first-child > .btn-group > a.cancel,
+.input-group-btn:first-child > .btn-group > a.delete,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .rf-pick-btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > a.action:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > a.create:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > a.edit:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > a.confirm:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > a.cancel:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > a.delete:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
-.input-group-btn:last-child > .btn-group:not(:last-child) > .rf-pick-btn {
+.input-group-btn:last-child > .btn-group:not(:last-child) > .rf-pick-btn,
+.input-group-btn:last-child > .btn-group:not(:last-child) > a.action,
+.input-group-btn:last-child > .btn-group:not(:last-child) > a.create,
+.input-group-btn:last-child > .btn-group:not(:last-child) > a.edit,
+.input-group-btn:last-child > .btn-group:not(:last-child) > a.confirm,
+.input-group-btn:last-child > .btn-group:not(:last-child) > a.cancel,
+.input-group-btn:last-child > .btn-group:not(:last-child) > a.delete {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -4078,13 +4222,37 @@ tbody.collapse.in {
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .rf-pick-btn,
+.input-group-btn:last-child > a.action,
+.input-group-btn:last-child > a.create,
+.input-group-btn:last-child > a.edit,
+.input-group-btn:last-child > a.confirm,
+.input-group-btn:last-child > a.cancel,
+.input-group-btn:last-child > a.delete,
 .input-group-btn:last-child > .btn-group > .btn,
 .input-group-btn:last-child > .btn-group > .rf-pick-btn,
+.input-group-btn:last-child > .btn-group > a.action,
+.input-group-btn:last-child > .btn-group > a.create,
+.input-group-btn:last-child > .btn-group > a.edit,
+.input-group-btn:last-child > .btn-group > a.confirm,
+.input-group-btn:last-child > .btn-group > a.cancel,
+.input-group-btn:last-child > .btn-group > a.delete,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child),
 .input-group-btn:first-child > .rf-pick-btn:not(:first-child),
+.input-group-btn:first-child > a.action:not(:first-child),
+.input-group-btn:first-child > a.create:not(:first-child),
+.input-group-btn:first-child > a.edit:not(:first-child),
+.input-group-btn:first-child > a.confirm:not(:first-child),
+.input-group-btn:first-child > a.cancel:not(:first-child),
+.input-group-btn:first-child > a.delete:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
-.input-group-btn:first-child > .btn-group:not(:first-child) > .rf-pick-btn {
+.input-group-btn:first-child > .btn-group:not(:first-child) > .rf-pick-btn,
+.input-group-btn:first-child > .btn-group:not(:first-child) > a.action,
+.input-group-btn:first-child > .btn-group:not(:first-child) > a.create,
+.input-group-btn:first-child > .btn-group:not(:first-child) > a.edit,
+.input-group-btn:first-child > .btn-group:not(:first-child) > a.confirm,
+.input-group-btn:first-child > .btn-group:not(:first-child) > a.cancel,
+.input-group-btn:first-child > .btn-group:not(:first-child) > a.delete {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4098,20 +4266,20 @@ tbody.collapse.in {
   font-size: 0;
   white-space: nowrap;
 }
-.input-group-btn > .btn, .input-group-btn > .rf-pick-btn {
+.input-group-btn > .btn, .input-group-btn > .rf-pick-btn, .input-group-btn > a.action, .input-group-btn > a.create, .input-group-btn > a.edit, .input-group-btn > a.confirm, .input-group-btn > a.cancel, .input-group-btn > a.delete {
   position: relative;
 }
-.input-group-btn > .btn + .btn, .input-group-btn > .rf-pick-btn + .btn, .input-group-btn > .btn + .rf-pick-btn, .input-group-btn > .rf-pick-btn + .rf-pick-btn {
+.input-group-btn > .btn + .btn, .input-group-btn > .rf-pick-btn + .btn, .input-group-btn > a.action + .btn, .input-group-btn > a.create + .btn, .input-group-btn > a.edit + .btn, .input-group-btn > a.confirm + .btn, .input-group-btn > a.cancel + .btn, .input-group-btn > a.delete + .btn, .input-group-btn > .btn + .rf-pick-btn, .input-group-btn > .rf-pick-btn + .rf-pick-btn, .input-group-btn > a.action + .rf-pick-btn, .input-group-btn > a.create + .rf-pick-btn, .input-group-btn > a.edit + .rf-pick-btn, .input-group-btn > a.confirm + .rf-pick-btn, .input-group-btn > a.cancel + .rf-pick-btn, .input-group-btn > a.delete + .rf-pick-btn, .input-group-btn > .btn + a.action, .input-group-btn > .rf-pick-btn + a.action, .input-group-btn > a.action + a.action, .input-group-btn > a.create + a.action, .input-group-btn > a.edit + a.action, .input-group-btn > a.confirm + a.action, .input-group-btn > a.cancel + a.action, .input-group-btn > a.delete + a.action, .input-group-btn > .btn + a.create, .input-group-btn > .rf-pick-btn + a.create, .input-group-btn > a.action + a.create, .input-group-btn > a.create + a.create, .input-group-btn > a.edit + a.create, .input-group-btn > a.confirm + a.create, .input-group-btn > a.cancel + a.create, .input-group-btn > a.delete + a.create, .input-group-btn > .btn + a.edit, .input-group-btn > .rf-pick-btn + a.edit, .input-group-btn > a.action + a.edit, .input-group-btn > a.create + a.edit, .input-group-btn > a.edit + a.edit, .input-group-btn > a.confirm + a.edit, .input-group-btn > a.cancel + a.edit, .input-group-btn > a.delete + a.edit, .input-group-btn > .btn + a.confirm, .input-group-btn > .rf-pick-btn + a.confirm, .input-group-btn > a.action + a.confirm, .input-group-btn > a.create + a.confirm, .input-group-btn > a.edit + a.confirm, .input-group-btn > a.confirm + a.confirm, .input-group-btn > a.cancel + a.confirm, .input-group-btn > a.delete + a.confirm, .input-group-btn > .btn + a.cancel, .input-group-btn > .rf-pick-btn + a.cancel, .input-group-btn > a.action + a.cancel, .input-group-btn > a.create + a.cancel, .input-group-btn > a.edit + a.cancel, .input-group-btn > a.confirm + a.cancel, .input-group-btn > a.cancel + a.cancel, .input-group-btn > a.delete + a.cancel, .input-group-btn > .btn + a.delete, .input-group-btn > .rf-pick-btn + a.delete, .input-group-btn > a.action + a.delete, .input-group-btn > a.create + a.delete, .input-group-btn > a.edit + a.delete, .input-group-btn > a.confirm + a.delete, .input-group-btn > a.cancel + a.delete, .input-group-btn > a.delete + a.delete {
   margin-left: -1px;
 }
-.input-group-btn > .btn:hover, .input-group-btn > .rf-pick-btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .rf-pick-btn:focus, .input-group-btn > .btn:active, .input-group-btn > .rf-pick-btn:active {
+.input-group-btn > .btn:hover, .input-group-btn > .rf-pick-btn:hover, .input-group-btn > a.action:hover, .input-group-btn > a.create:hover, .input-group-btn > a.edit:hover, .input-group-btn > a.confirm:hover, .input-group-btn > a.cancel:hover, .input-group-btn > a.delete:hover, .input-group-btn > .btn:focus, .input-group-btn > .rf-pick-btn:focus, .input-group-btn > a.action:focus, .input-group-btn > a.create:focus, .input-group-btn > a.edit:focus, .input-group-btn > a.confirm:focus, .input-group-btn > a.cancel:focus, .input-group-btn > a.delete:focus, .input-group-btn > .btn:active, .input-group-btn > .rf-pick-btn:active, .input-group-btn > a.action:active, .input-group-btn > a.create:active, .input-group-btn > a.edit:active, .input-group-btn > a.confirm:active, .input-group-btn > a.cancel:active, .input-group-btn > a.delete:active {
   z-index: 2;
 }
-.input-group-btn:first-child > .btn, .input-group-btn:first-child > .rf-pick-btn,
+.input-group-btn:first-child > .btn, .input-group-btn:first-child > .rf-pick-btn, .input-group-btn:first-child > a.action, .input-group-btn:first-child > a.create, .input-group-btn:first-child > a.edit, .input-group-btn:first-child > a.confirm, .input-group-btn:first-child > a.cancel, .input-group-btn:first-child > a.delete,
 .input-group-btn:first-child > .btn-group {
   margin-right: -1px;
 }
-.input-group-btn:last-child > .btn, .input-group-btn:last-child > .rf-pick-btn,
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .rf-pick-btn, .input-group-btn:last-child > a.action, .input-group-btn:last-child > a.create, .input-group-btn:last-child > a.edit, .input-group-btn:last-child > a.confirm, .input-group-btn:last-child > a.cancel, .input-group-btn:last-child > a.delete,
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
 }
@@ -4565,11 +4733,11 @@ tbody.collapse.in {
   margin-top: 8px;
   margin-bottom: 8px;
 }
-.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.rf-pick-btn {
+.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.rf-pick-btn, .btn-group-sm > a.navbar-btn.action, .btn-group-sm > a.navbar-btn.create, .btn-group-sm > a.navbar-btn.confirm, .btn-group-sm > a.navbar-btn.cancel, a.navbar-btn.edit, a.navbar-btn.delete {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .btn-group-xs > .navbar-btn.rf-pick-btn {
+.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .btn-group-xs > .navbar-btn.rf-pick-btn, .btn-group-xs > a.navbar-btn.action, .btn-group-xs > a.navbar-btn.create, .btn-group-xs > a.navbar-btn.edit, .btn-group-xs > a.navbar-btn.confirm, .btn-group-xs > a.navbar-btn.cancel, .btn-group-xs > a.navbar-btn.delete {
   margin-top: 14px;
   margin-bottom: 14px;
 }
@@ -4658,13 +4826,13 @@ tbody.collapse.in {
 .navbar-default .navbar-link:hover {
   color: #333333;
 }
-.navbar-default .btn-link {
+.navbar-default .btn-link, .navbar-default a.cancel {
   color: #777777;
 }
-.navbar-default .btn-link:hover, .navbar-default .btn-link:focus {
+.navbar-default .btn-link:hover, .navbar-default a.cancel:hover, .navbar-default .btn-link:focus, .navbar-default a.cancel:focus {
   color: #333333;
 }
-.navbar-default .btn-link[disabled]:hover, .navbar-default .btn-link[disabled]:focus, fieldset[disabled] .navbar-default .btn-link:hover, fieldset[disabled] .navbar-default .btn-link:focus {
+.navbar-default .btn-link[disabled]:hover, .navbar-default a[disabled].cancel:hover, .navbar-default .btn-link[disabled]:focus, .navbar-default a[disabled].cancel:focus, fieldset[disabled] .navbar-default .btn-link:hover, fieldset[disabled] .navbar-default a.cancel:hover, fieldset[disabled] .navbar-default .btn-link:focus, fieldset[disabled] .navbar-default a.cancel:focus {
   color: #cccccc;
 }
 
@@ -4743,13 +4911,13 @@ tbody.collapse.in {
 .navbar-inverse .navbar-link:hover {
   color: white;
 }
-.navbar-inverse .btn-link {
+.navbar-inverse .btn-link, .navbar-inverse a.cancel {
   color: #999999;
 }
-.navbar-inverse .btn-link:hover, .navbar-inverse .btn-link:focus {
+.navbar-inverse .btn-link:hover, .navbar-inverse a.cancel:hover, .navbar-inverse .btn-link:focus, .navbar-inverse a.cancel:focus {
   color: white;
 }
-.navbar-inverse .btn-link[disabled]:hover, .navbar-inverse .btn-link[disabled]:focus, fieldset[disabled] .navbar-inverse .btn-link:hover, fieldset[disabled] .navbar-inverse .btn-link:focus {
+.navbar-inverse .btn-link[disabled]:hover, .navbar-inverse a[disabled].cancel:hover, .navbar-inverse .btn-link[disabled]:focus, .navbar-inverse a[disabled].cancel:focus, fieldset[disabled] .navbar-inverse .btn-link:hover, fieldset[disabled] .navbar-inverse a.cancel:hover, fieldset[disabled] .navbar-inverse .btn-link:focus, fieldset[disabled] .navbar-inverse a.cancel:focus {
   color: #444444;
 }
 
@@ -4929,7 +5097,7 @@ tbody.collapse.in {
 .label:empty {
   display: none;
 }
-.btn .label, .rf-pick-btn .label {
+.btn .label, .rf-pick-btn .label, a.action .label, a.create .label, a.edit .label, a.confirm .label, a.cancel .label, a.delete .label {
   position: relative;
   top: -1px;
 }
@@ -4999,11 +5167,11 @@ a.label:hover, a.label:focus {
 .badge:empty {
   display: none;
 }
-.btn .badge, .rf-pick-btn .badge {
+.btn .badge, .rf-pick-btn .badge, a.action .badge, a.create .badge, a.edit .badge, a.confirm .badge, a.cancel .badge, a.delete .badge {
   position: relative;
   top: -1px;
 }
-.btn-xs .badge, .btn-group-xs > .btn .badge, .btn-group-xs > .rf-pick-btn .badge {
+.btn-xs .badge, .btn-group-xs > .btn .badge, .btn-group-xs > .rf-pick-btn .badge, .btn-group-xs > a.action .badge, .btn-group-xs > a.create .badge, .btn-group-xs > a.edit .badge, .btn-group-xs > a.confirm .badge, .btn-group-xs > a.cancel .badge, .btn-group-xs > a.delete .badge {
   top: 0;
   padding: 1px 5px;
 }
@@ -5944,11 +6112,11 @@ button.close {
 .modal-footer:after {
   clear: both;
 }
-.modal-footer .btn + .btn, .modal-footer .rf-pick-btn + .btn, .modal-footer .btn + .rf-pick-btn, .modal-footer .rf-pick-btn + .rf-pick-btn {
+.modal-footer .btn + .btn, .modal-footer .rf-pick-btn + .btn, .modal-footer a.action + .btn, .modal-footer a.create + .btn, .modal-footer a.edit + .btn, .modal-footer a.confirm + .btn, .modal-footer a.cancel + .btn, .modal-footer a.delete + .btn, .modal-footer .btn + .rf-pick-btn, .modal-footer .rf-pick-btn + .rf-pick-btn, .modal-footer a.action + .rf-pick-btn, .modal-footer a.create + .rf-pick-btn, .modal-footer a.edit + .rf-pick-btn, .modal-footer a.confirm + .rf-pick-btn, .modal-footer a.cancel + .rf-pick-btn, .modal-footer a.delete + .rf-pick-btn, .modal-footer .btn + a.action, .modal-footer .rf-pick-btn + a.action, .modal-footer a.action + a.action, .modal-footer a.create + a.action, .modal-footer a.edit + a.action, .modal-footer a.confirm + a.action, .modal-footer a.cancel + a.action, .modal-footer a.delete + a.action, .modal-footer .btn + a.create, .modal-footer .rf-pick-btn + a.create, .modal-footer a.action + a.create, .modal-footer a.create + a.create, .modal-footer a.edit + a.create, .modal-footer a.confirm + a.create, .modal-footer a.cancel + a.create, .modal-footer a.delete + a.create, .modal-footer .btn + a.edit, .modal-footer .rf-pick-btn + a.edit, .modal-footer a.action + a.edit, .modal-footer a.create + a.edit, .modal-footer a.edit + a.edit, .modal-footer a.confirm + a.edit, .modal-footer a.cancel + a.edit, .modal-footer a.delete + a.edit, .modal-footer .btn + a.confirm, .modal-footer .rf-pick-btn + a.confirm, .modal-footer a.action + a.confirm, .modal-footer a.create + a.confirm, .modal-footer a.edit + a.confirm, .modal-footer a.confirm + a.confirm, .modal-footer a.cancel + a.confirm, .modal-footer a.delete + a.confirm, .modal-footer .btn + a.cancel, .modal-footer .rf-pick-btn + a.cancel, .modal-footer a.action + a.cancel, .modal-footer a.create + a.cancel, .modal-footer a.edit + a.cancel, .modal-footer a.confirm + a.cancel, .modal-footer a.cancel + a.cancel, .modal-footer a.delete + a.cancel, .modal-footer .btn + a.delete, .modal-footer .rf-pick-btn + a.delete, .modal-footer a.action + a.delete, .modal-footer a.create + a.delete, .modal-footer a.edit + a.delete, .modal-footer a.confirm + a.delete, .modal-footer a.cancel + a.delete, .modal-footer a.delete + a.delete {
   margin-left: 5px;
   margin-bottom: 0;
 }
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .rf-pick-btn + .btn, .modal-footer .btn-group .btn + .rf-pick-btn, .modal-footer .btn-group .rf-pick-btn + .rf-pick-btn {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .rf-pick-btn + .btn, .modal-footer .btn-group a.action + .btn, .modal-footer .btn-group a.create + .btn, .modal-footer .btn-group a.edit + .btn, .modal-footer .btn-group a.confirm + .btn, .modal-footer .btn-group a.cancel + .btn, .modal-footer .btn-group a.delete + .btn, .modal-footer .btn-group .btn + .rf-pick-btn, .modal-footer .btn-group .rf-pick-btn + .rf-pick-btn, .modal-footer .btn-group a.action + .rf-pick-btn, .modal-footer .btn-group a.create + .rf-pick-btn, .modal-footer .btn-group a.edit + .rf-pick-btn, .modal-footer .btn-group a.confirm + .rf-pick-btn, .modal-footer .btn-group a.cancel + .rf-pick-btn, .modal-footer .btn-group a.delete + .rf-pick-btn, .modal-footer .btn-group .btn + a.action, .modal-footer .btn-group .rf-pick-btn + a.action, .modal-footer .btn-group a.action + a.action, .modal-footer .btn-group a.create + a.action, .modal-footer .btn-group a.edit + a.action, .modal-footer .btn-group a.confirm + a.action, .modal-footer .btn-group a.cancel + a.action, .modal-footer .btn-group a.delete + a.action, .modal-footer .btn-group .btn + a.create, .modal-footer .btn-group .rf-pick-btn + a.create, .modal-footer .btn-group a.action + a.create, .modal-footer .btn-group a.create + a.create, .modal-footer .btn-group a.edit + a.create, .modal-footer .btn-group a.confirm + a.create, .modal-footer .btn-group a.cancel + a.create, .modal-footer .btn-group a.delete + a.create, .modal-footer .btn-group .btn + a.edit, .modal-footer .btn-group .rf-pick-btn + a.edit, .modal-footer .btn-group a.action + a.edit, .modal-footer .btn-group a.create + a.edit, .modal-footer .btn-group a.edit + a.edit, .modal-footer .btn-group a.confirm + a.edit, .modal-footer .btn-group a.cancel + a.edit, .modal-footer .btn-group a.delete + a.edit, .modal-footer .btn-group .btn + a.confirm, .modal-footer .btn-group .rf-pick-btn + a.confirm, .modal-footer .btn-group a.action + a.confirm, .modal-footer .btn-group a.create + a.confirm, .modal-footer .btn-group a.edit + a.confirm, .modal-footer .btn-group a.confirm + a.confirm, .modal-footer .btn-group a.cancel + a.confirm, .modal-footer .btn-group a.delete + a.confirm, .modal-footer .btn-group .btn + a.cancel, .modal-footer .btn-group .rf-pick-btn + a.cancel, .modal-footer .btn-group a.action + a.cancel, .modal-footer .btn-group a.create + a.cancel, .modal-footer .btn-group a.edit + a.cancel, .modal-footer .btn-group a.confirm + a.cancel, .modal-footer .btn-group a.cancel + a.cancel, .modal-footer .btn-group a.delete + a.cancel, .modal-footer .btn-group .btn + a.delete, .modal-footer .btn-group .rf-pick-btn + a.delete, .modal-footer .btn-group a.action + a.delete, .modal-footer .btn-group a.create + a.delete, .modal-footer .btn-group a.edit + a.delete, .modal-footer .btn-group a.confirm + a.delete, .modal-footer .btn-group a.cancel + a.delete, .modal-footer .btn-group a.delete + a.delete {
   margin-left: -1px;
 }
 .modal-footer .btn-block + .btn-block {
@@ -6375,7 +6543,7 @@ button.close {
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
-.carousel-caption .btn, .carousel-caption .rf-pick-btn {
+.carousel-caption .btn, .carousel-caption .rf-pick-btn, .carousel-caption a.action, .carousel-caption a.create, .carousel-caption a.edit, .carousel-caption a.confirm, .carousel-caption a.cancel, .carousel-caption a.delete {
   text-shadow: none;
 }
 
@@ -6700,23 +6868,32 @@ button.close {
     display: none !important;
   }
 }
-.btn-default, .rf-pick-btn,
+.btn-default, .rf-pick-btn, a.action, a.edit,
 .btn-primary,
+a.create,
 .btn-success,
+a.confirm,
 .btn-info,
 .btn-warning,
-.btn-danger {
+.btn-danger,
+a.delete {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.btn-default:active, .rf-pick-btn:active, .btn-default.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default.rf-pick-sel,
+.btn-default:active, .rf-pick-btn:active, a.action:active, a.edit:active, .btn-default.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.action, .rf-pick-lst-scrl a.rf-pick-sel.edit, a.active.action, a.active.edit,
 .btn-primary:active,
+a.create:active,
 .btn-primary.active,
 .rf-pick-lst-scrl .btn-primary.rf-pick-sel,
+.rf-pick-lst-scrl a.rf-pick-sel.create,
+a.active.create,
 .btn-success:active,
+a.confirm:active,
 .btn-success.active,
 .rf-pick-lst-scrl .btn-success.rf-pick-sel,
+.rf-pick-lst-scrl a.rf-pick-sel.confirm,
+a.active.confirm,
 .btn-info:active,
 .btn-info.active,
 .rf-pick-lst-scrl .btn-info.rf-pick-sel,
@@ -6724,17 +6901,20 @@ button.close {
 .btn-warning.active,
 .rf-pick-lst-scrl .btn-warning.rf-pick-sel,
 .btn-danger:active,
+a.delete:active,
 .btn-danger.active,
-.rf-pick-lst-scrl .btn-danger.rf-pick-sel {
+.rf-pick-lst-scrl .btn-danger.rf-pick-sel,
+.rf-pick-lst-scrl a.rf-pick-sel.delete,
+a.active.delete {
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
-.btn:active, .rf-pick-btn:active, .btn.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn.rf-pick-sel {
+.btn:active, .rf-pick-btn:active, a.action:active, a.create:active, a.edit:active, a.confirm:active, a.cancel:active, a.delete:active, .btn.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.action, .rf-pick-lst-scrl a.rf-pick-sel.create, .rf-pick-lst-scrl a.rf-pick-sel.edit, .rf-pick-lst-scrl a.rf-pick-sel.confirm, .rf-pick-lst-scrl a.rf-pick-sel.cancel, .rf-pick-lst-scrl a.rf-pick-sel.delete, a.active.action, a.active.create, a.active.edit, a.active.confirm, a.active.cancel, a.active.delete {
   background-image: none;
 }
 
-.btn-default, .rf-pick-btn {
+.btn-default, .rf-pick-btn, a.action, a.edit {
   background-image: -webkit-linear-gradient(top, white 0%, #e0e0e0 100%);
   background-image: -o-linear-gradient(top, white 0%, #e0e0e0 100%);
   background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
@@ -6746,16 +6926,16 @@ button.close {
   text-shadow: 0 1px 0 #fff;
   border-color: #ccc;
 }
-.btn-default:hover, .rf-pick-btn:hover, .btn-default:focus, .rf-pick-btn:focus {
+.btn-default:hover, .rf-pick-btn:hover, a.action:hover, a.edit:hover, .btn-default:focus, .rf-pick-btn:focus, a.action:focus, a.edit:focus {
   background-color: #e0e0e0;
   background-position: 0 -15px;
 }
-.btn-default:active, .rf-pick-btn:active, .btn-default.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default.rf-pick-sel {
+.btn-default:active, .rf-pick-btn:active, a.action:active, a.edit:active, .btn-default.active, .active.rf-pick-btn, .rf-pick-lst-scrl .rf-pick-btn.rf-pick-sel, .rf-pick-lst-scrl .btn-default.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.action, .rf-pick-lst-scrl a.rf-pick-sel.edit, a.active.action, a.active.edit {
   background-color: #e0e0e0;
   border-color: #dbdbdb;
 }
 
-.btn-primary {
+.btn-primary, a.create {
   background-image: -webkit-linear-gradient(top, #428bca 0%, #2d6ca2 100%);
   background-image: -o-linear-gradient(top, #428bca 0%, #2d6ca2 100%);
   background-image: linear-gradient(to bottom, #428bca 0%, #2d6ca2 100%);
@@ -6765,16 +6945,16 @@ button.close {
   background-repeat: repeat-x;
   border-color: #2b669a;
 }
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover, a.create:hover, .btn-primary:focus, a.create:focus {
   background-color: #2d6ca2;
   background-position: 0 -15px;
 }
-.btn-primary:active, .btn-primary.active, .rf-pick-lst-scrl .btn-primary.rf-pick-sel {
+.btn-primary:active, a.create:active, .btn-primary.active, .rf-pick-lst-scrl .btn-primary.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.create, a.active.create {
   background-color: #2d6ca2;
   border-color: #2b669a;
 }
 
-.btn-success {
+.btn-success, a.confirm {
   background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
   background-image: -o-linear-gradient(top, #5cb85c 0%, #419641 100%);
   background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
@@ -6784,11 +6964,11 @@ button.close {
   background-repeat: repeat-x;
   border-color: #3e8f3e;
 }
-.btn-success:hover, .btn-success:focus {
+.btn-success:hover, a.confirm:hover, .btn-success:focus, a.confirm:focus {
   background-color: #419641;
   background-position: 0 -15px;
 }
-.btn-success:active, .btn-success.active, .rf-pick-lst-scrl .btn-success.rf-pick-sel {
+.btn-success:active, a.confirm:active, .btn-success.active, .rf-pick-lst-scrl .btn-success.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.confirm, a.active.confirm {
   background-color: #419641;
   border-color: #3e8f3e;
 }
@@ -6831,7 +7011,7 @@ button.close {
   border-color: #e38d13;
 }
 
-.btn-danger {
+.btn-danger, a.delete {
   background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
   background-image: -o-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
   background-image: linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%);
@@ -6841,11 +7021,11 @@ button.close {
   background-repeat: repeat-x;
   border-color: #b92c28;
 }
-.btn-danger:hover, .btn-danger:focus {
+.btn-danger:hover, a.delete:hover, .btn-danger:focus, a.delete:focus {
   background-color: #c12e2a;
   background-position: 0 -15px;
 }
-.btn-danger:active, .btn-danger.active, .rf-pick-lst-scrl .btn-danger.rf-pick-sel {
+.btn-danger:active, a.delete:active, .btn-danger.active, .rf-pick-lst-scrl .btn-danger.rf-pick-sel, .rf-pick-lst-scrl a.rf-pick-sel.delete, a.active.delete {
   background-color: #c12e2a;
   border-color: #b92c28;
 }

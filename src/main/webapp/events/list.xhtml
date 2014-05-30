@@ -59,8 +59,8 @@
 
                     <h:column>
                         <h:panelGroup layout="block" styleClass="btn-toolbar">
-                            <h:commandLink action="#{eventController.prepareEdit}" value="Edit" styleClass="btn btn-primary"/>
-                            <h:commandLink action="#{eventController.destroy}" value="Delete" styleClass="btn btn-danger"/>
+                            <h:commandLink action="#{eventController.prepareEdit}" value="Edit" styleClass="edit"/>
+                            <h:commandLink action="#{eventController.destroy}" value="Delete" styleClass="delete"/>
                         </h:panelGroup>
                     </h:column>
                 </h:dataTable>
@@ -68,8 +68,8 @@
         </ui:define>
 
         <ui:define name="actions">
-            <h:commandLink action="#{eventController.prepareCreate}" value="Create new event" styleClass="btn btn-default"/>
-            <h:commandLink action="#{eventController.download}" value="PDF" styleClass="btn btn-default"/>
+            <h:commandLink action="#{eventController.prepareCreate}" value="Create new event" styleClass="create"/>
+            <h:commandLink action="#{eventController.download}" value="PDF" styleClass="action"/>
         </ui:define>
     </ui:composition>
 </html>

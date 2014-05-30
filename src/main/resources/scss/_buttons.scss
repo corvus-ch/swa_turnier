@@ -1,0 +1,34 @@
+a {
+
+    &.action {
+        @extend .btn;
+        @extend .btn-default;
+    }
+
+    &.create {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+
+    &.edit {
+        @extend .btn;
+        @extend .btn-default;
+        @extend .btn-sm;
+    }
+
+    &.confirm {
+        @extend .btn;
+        @extend .btn-success;
+    }
+
+    &.cancel{
+        @extend .btn;
+        @extend .btn-link;
+    }
+
+    &.delete{
+        @extend .btn;
+        @extend .btn-danger;
+        @extend .btn-sm;
+    }
+}

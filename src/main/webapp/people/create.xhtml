@@ -15,8 +15,8 @@
         </ui:define>
 
         <ui:define name="actions">
-            <h:commandLink action="#{personController.create}" value="Create" styleClass="btn btn-primary"/>
-            <h:commandLink action="#{personController.prepareList}" value="Cancel" immediate="true" styleClass="btn btn-danger"/>
+            <h:commandLink action="#{personController.create}" value="Create" styleClass="confirm"/>
+            <h:commandLink action="#{personController.prepareList}" value="Cancel" immediate="true" styleClass="cancel"/>
         </ui:define>
     </ui:composition>
 </html>
