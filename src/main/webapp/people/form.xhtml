@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition>
+        <h:messages
+            infoClass="alert alert-success"
+            warnClass="alert alert-warning"
+            errorClass="alert alert-danger"
+            globalOnly="true" />
+
+        <div class="form-group">
+            <h:outputLabel value="Name" for="name" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <h:inputText id="name" value="#{personController.current.name}" title="Name" styleClass="form-control"/>
+                <h:message for="name" errorClass="help-block alert alert-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel value="Mail" for="mail" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <h:inputText id="mail" value="#{personController.current.mail}" title="Mail" styleClass="form-control"/>
+                <h:message for="mail" errorClass="help-block alert alert-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel value="Phone" for="phone" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <h:inputText id="phone" value="#{personController.current.phone}" title="Phone" styleClass="form-control"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel value="Address" for="address" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <h:inputText id="address" value="#{personController.current.address}" title="Address" styleClass="form-control"/>
+                <h:message for="address" errorClass="help-block alert alert-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel value="Coaching" for="coaches" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <rich:pickList id="coaches" value="#{personController.current.coachedTeams}"
+                               sourceCaption="Teams"
+                               targetCaption="Coached teams">
+                    <f:selectItems value="#{teamController.items}" var="team" itemValue="#{team}" itemLabel="#{team.name}" />
+                </rich:pickList>
+                <h:message for="coaches" errorClass="help-block alert alert-danger" />
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            <h:outputLabel value="Playing" for="plays" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <rich:pickList id="plays" value="#{personController.current.teams}"
+                               sourceCaption="Teams"
+                               targetCaption="Plays in">
+                    <f:selectItems value="#{teamController.items}" var="team" itemValue="#{team}" itemLabel="#{team.name}" />
+                </rich:pickList>
+                <h:message for="plays" errorClass="help-block alert alert-danger" />
+            </div>
+        </div>
+
+    </ui:composition>
+</html>

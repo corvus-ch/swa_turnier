@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition>
+        <h:messages
+            infoClass="alert alert-success"
+            warnClass="alert alert-warning"
+            errorClass="alert alert-danger"
+            globalOnly="true" />
+
+        <div class="form-group">
+            <h:outputLabel value="Starts" for="begin" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <h:inputText id="begin" value="#{eventController.current.begin}" title="Starts" styleClass="form-control">  
+                    <f:convertDateTime pattern="dd.MM.yyy HH:mm"/>
+                </h:inputText>
+                <h:message for="begin" errorClass="help-block alert alert-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel value="Ends" for="end" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <h:inputText id="end" value="#{eventController.current.end}" title="Address" styleClass="form-control">
+                    <f:convertDateTime pattern="dd.MM.yyy HH:mm"/>
+                </h:inputText>
+                <h:message for="end" errorClass="help-block alert alert-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel value="Type" for="type" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <h:selectOneMenu id="type" value="#{eventController.current.type}" styleClass="form-control">
+                    <f:selectItems value="#{eventController.types}" var="type" itemLabel="#{type}" itemValue="#{type}" />
+                </h:selectOneMenu>
+                <h:message for="type" errorClass="help-block alert alert-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel value="Location" for="location" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <h:selectOneMenu id="location" value="#{eventController.current.location}" styleClass="form-control">
+                    <f:selectItems value="#{locationController.items}" var="location" itemLabel="#{location.name}" itemValue="#{location}" />
+                </h:selectOneMenu>
+                <h:message for="location" errorClass="help-block alert alert-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h:outputLabel value="Team" for="team" styleClass="col-sm-2 control-label"/>
+            <div class="col-sm-10">
+                <h:selectOneMenu id="team" value="#{eventController.current.team}" styleClass="form-control" >
+                    <f:selectItems value="#{teamController.items}" var="team" itemLabel="#{team.name}" itemValue="#{team}" />
+                </h:selectOneMenu>
+                <h:message for="team" errorClass="help-block alert alert-danger" />
+            </div>
+        </div>
+    </ui:composition>
+</html>
