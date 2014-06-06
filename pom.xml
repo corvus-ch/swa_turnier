@@ -4,7 +4,7 @@
 
     <groupId>ch.fhnw.swa.turnier</groupId>
     <artifactId>swa_Turnier</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>war</packaging>
 
     <name>swa_Turnier</name>
