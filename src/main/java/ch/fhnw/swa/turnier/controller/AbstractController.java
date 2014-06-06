@@ -92,7 +92,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
         try {
             getBean().create(current);
             JsfUtil.addSuccessMessage("Entity created");
-            prepareCreate();
+            recreateModel();
             return "list";
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, "Could not create entity.");
@@ -117,6 +117,7 @@ public abstract class AbstractController<T> implements ControllerInterface<T> {
         try {
             getBean().update(current);
             JsfUtil.addSuccessMessage("Entity updated.");
+            recreateModel();
             return "list";
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, "Could not update entity.");
